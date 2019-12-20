@@ -1,0 +1,8 @@
+.*
+*.dtb
+dt_ver.dtsi
+*.tmp.dts
+
+!.gitignore
+!.travis.yml
+!.gitlab-ci.yml
