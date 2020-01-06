@@ -28,7 +28,10 @@
 		gpio0 = &gpio;
 		i2c0 = &i2c0;
 		i2c1 = &i2c1;
+		//mmc0 = &sdhci1;
+		//mmc1 = &sdhci0;
 		mmc0 = &sdhci1;
+		mmc1 = &sdhci0;
 		rtc0 = &rtc;
 		serial0 = &uart0;
 		serial1 = &uart1;
@@ -113,8 +116,8 @@
 
 &gpio {
 	status = "okay";
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_gpio_default>;
+	//pinctrl-names = "default";
+	//pinctrl-0 = <&pinctrl_gpio_default>;
 };
 
 &gpu {
@@ -124,11 +127,14 @@
 &i2c0 {
 	status = "okay";
 	clock-frequency = <400000>;
-	//pinctrl-names = "default", "gpio";
-	//pinctrl-0 = <&pinctrl_i2c0_default>;
-	//pinctrl-1 = <&pinctrl_i2c0_gpio>;
-	//scl-gpios = <&gpio 14 GPIO_ACTIVE_HIGH>;
-	//sda-gpios = <&gpio 15 GPIO_ACTIVE_HIGH>;
+
+	cps1848@6c {
+		compatible = "si5383";
+		reg = <0x6c>;
+		reset-gpios = <&gpio 172 0>;	// 95+77
+/include/ "si5383_regmap.dtsi"
+	};
+
 
 };
 
@@ -262,6 +268,45 @@
 //		};
 //	};
 
+	pinctrl_sdhci0_default: sdhci0-default {
+		mux {
+			groups = "sdio0_0_grp";
+			function = "sdio0";
+		};
+
+		conf {
+			groups = "sdio0_0_grp";
+			slew-rate = <SLEW_RATE_SLOW>;
+			io-standard = <IO_STANDARD_LVCMOS18>;
+			bias-disable;
+		};
+
+		mux-cd {
+			groups = "sdio0_cd_0_grp";
+			function = "sdio0_cd";
+		};
+
+		conf-cd {
+			groups = "sdio0_cd_0_grp";
+			bias-high-impedance;
+			bias-pull-up;
+			slew-rate = <SLEW_RATE_SLOW>;
+			io-standard = <IO_STANDARD_LVCMOS18>;
+		};
+
+		mux-wp {
+			groups = "sdio0_wp_0_grp";
+			function = "sdio0_wp";
+		};
+
+		conf-wp {
+			groups = "sdio0_wp_0_grp";
+			bias-high-impedance;
+			bias-pull-up;
+			slew-rate = <SLEW_RATE_SLOW>;
+			io-standard = <IO_STANDARD_LVCMOS18>;
+		};
+	};
 
 	pinctrl_sdhci1_default: sdhci1-default {
 		mux {
@@ -274,28 +319,16 @@
 			slew-rate = <SLEW_RATE_SLOW>;
 			io-standard = <IO_STANDARD_LVCMOS18>;
 			bias-disable;
+			drive-strength = <12>;
 		};
 
 		mux-cd {
-			groups = "sdio1_0_cd_grp";
+			groups = "sdio1_cd_0_grp";
 			function = "sdio1_cd";
 		};
 
 		conf-cd {
-			groups = "sdio1_0_cd_grp";
-			bias-high-impedance;
-			bias-pull-up;
-			slew-rate = <SLEW_RATE_SLOW>;
-			io-standard = <IO_STANDARD_LVCMOS18>;
-		};
-
-		mux-wp {
-			groups = "sdio1_0_wp_grp";
-			function = "sdio1_wp";
-		};
-
-		conf-wp {
-			groups = "sdio1_0_wp_grp";
+			groups = "sdio1_cd_0_grp";
 			bias-high-impedance;
 			bias-pull-up;
 			slew-rate = <SLEW_RATE_SLOW>;
@@ -303,39 +336,39 @@
 		};
 	};
 
-	pinctrl_gpio_default: gpio-default {
-		mux-sw {
-			function = "gpio0";
-			groups = "gpio0_22_grp", "gpio0_23_grp";
-		};
-
-		conf-sw {
-			groups = "gpio0_22_grp", "gpio0_23_grp";
-			slew-rate = <SLEW_RATE_SLOW>;
-			io-standard = <IO_STANDARD_LVCMOS18>;
-		};
-
-		mux-msp {
-			function = "gpio0";
-			groups = "gpio0_13_grp", "gpio0_38_grp";
-		};
-
-		conf-msp {
-			groups = "gpio0_13_grp", "gpio0_38_grp";
-			slew-rate = <SLEW_RATE_SLOW>;
-			io-standard = <IO_STANDARD_LVCMOS18>;
-		};
-
-		conf-pull-up {
-			pins = "MIO22", "MIO23";
-			bias-pull-up;
-		};
-
-		conf-pull-none {
-			pins = "MIO13", "MIO38";
-			bias-disable;
-		};
-	};
+//	pinctrl_gpio_default: gpio-default {
+//		mux-sw {
+//			function = "gpio0";
+//			groups = "gpio0_22_grp", "gpio0_23_grp";
+//		};
+//
+//		conf-sw {
+//			groups = "gpio0_22_grp", "gpio0_23_grp";
+//			slew-rate = <SLEW_RATE_SLOW>;
+//			io-standard = <IO_STANDARD_LVCMOS18>;
+//		};
+//
+//		mux-msp {
+//			function = "gpio0";
+//			groups = "gpio0_13_grp", "gpio0_38_grp";
+//		};
+//
+//		conf-msp {
+//			groups = "gpio0_13_grp", "gpio0_38_grp";
+//			slew-rate = <SLEW_RATE_SLOW>;
+//			io-standard = <IO_STANDARD_LVCMOS18>;
+//		};
+//
+//		conf-pull-up {
+//			pins = "MIO22", "MIO23";
+//			bias-pull-up;
+//		};
+//
+//		conf-pull-none {
+//			pins = "MIO13", "MIO38";
+//			bias-disable;
+//		};
+//	};
 };
 
 //&qspi {
@@ -372,14 +405,49 @@
 	status = "okay";
 };
 
-/* SD1 with level shifter */
+//&sdhci0 {
+//	status = "okay";
+//	//xlnx,mio_bank = <0>;
+//	xlnx,mio_bank = <0>;
+//};
+//
+///* SD1 with level shifter */
+//&sdhci1 {
+//	status = "okay";
+//	no-1-8-v;
+//	xlnx,mio_bank = <1>;
+//};
+
+
 &sdhci1 {
 	status = "okay";
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_sdhci1_default>;
+	no-1-8-v;
+	bus-width = <4>;
 	xlnx,mio_bank = <1>;
+	//pinctrl-names = "default";   // 忘了写这个 default
+	//pinctrl-0 = <&pinctrl_sdhci1_default>;
 };
 
+&sdhci0 {
+	//status = "okay";
+	//no-1-8-v;
+	////bus-width = <8>;
+	////mmc-hs200-1_8v;
+	//xlnx,mio_bank = <0>;
+
+
+
+	status = "okay";
+	bus-width = <8>;
+	clock-frequency = <20000000>;
+	xlnx,mio_bank = <0>;
+	no-sd;
+	no-sdio;
+	disable-wp;
+
+	//pinctrl-names = "default";   // 忘了写这个 default
+	//pinctrl-0 = <&pinctrl_sdhci0_default>;
+};
 
 
 &uart0 {
