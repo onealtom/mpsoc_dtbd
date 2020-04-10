@@ -1,0 +1,2 @@
+#include "zynqmp-zcu102-rev10-adrv9371.dts"
+//#include "zynqmp-zcu102-rev1.0.dts"

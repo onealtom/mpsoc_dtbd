@@ -36,7 +36,8 @@
 		serial0 = &uart0;
 		serial1 = &uart1;
 		serial2 = &dcc;
-		spi0 = &qspi;
+		//spi0 = &qspi;
+		//spi0 = spi0;
 		usb0 = &usb0;
 	};
 
@@ -116,8 +117,8 @@
 
 &gpio {
 	status = "okay";
-	//pinctrl-names = "default";
-	//pinctrl-0 = <&pinctrl_gpio_default>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_gpio_default>;
 };
 
 &gpu {
@@ -336,39 +337,39 @@
 		};
 	};
 
-//	pinctrl_gpio_default: gpio-default {
-//		mux-sw {
-//			function = "gpio0";
-//			groups = "gpio0_22_grp", "gpio0_23_grp";
-//		};
-//
-//		conf-sw {
-//			groups = "gpio0_22_grp", "gpio0_23_grp";
-//			slew-rate = <SLEW_RATE_SLOW>;
-//			io-standard = <IO_STANDARD_LVCMOS18>;
-//		};
-//
-//		mux-msp {
-//			function = "gpio0";
-//			groups = "gpio0_13_grp", "gpio0_38_grp";
-//		};
-//
-//		conf-msp {
-//			groups = "gpio0_13_grp", "gpio0_38_grp";
-//			slew-rate = <SLEW_RATE_SLOW>;
-//			io-standard = <IO_STANDARD_LVCMOS18>;
-//		};
-//
-//		conf-pull-up {
-//			pins = "MIO22", "MIO23";
-//			bias-pull-up;
-//		};
-//
-//		conf-pull-none {
-//			pins = "MIO13", "MIO38";
-//			bias-disable;
-//		};
-//	};
+	pinctrl_gpio_default: gpio-default {
+		mux-sw {
+			function = "gpio0";
+			groups = "gpio0_22_grp", "gpio0_23_grp";
+		};
+
+		conf-sw {
+			groups = "gpio0_22_grp", "gpio0_23_grp";
+			slew-rate = <SLEW_RATE_SLOW>;
+			io-standard = <IO_STANDARD_LVCMOS18>;
+		};
+
+		mux-msp {
+			function = "gpio0";
+			groups = "gpio0_13_grp", "gpio0_38_grp";
+		};
+
+		conf-msp {
+			groups = "gpio0_13_grp", "gpio0_38_grp";
+			slew-rate = <SLEW_RATE_SLOW>;
+			io-standard = <IO_STANDARD_LVCMOS18>;
+		};
+
+		conf-pull-up {
+			pins = "MIO22", "MIO23";
+			bias-pull-up;
+		};
+
+		conf-pull-none {
+			pins = "MIO13", "MIO38";
+			bias-disable;
+		};
+	};
 };
 
 //&qspi {
