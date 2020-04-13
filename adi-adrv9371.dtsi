@@ -1,7 +1,180 @@
 
 #include <dt-bindings/iio/frequency/ad9528.h>
 
-&fmc_spi {
+
+&fpga_axi {
+	//------------------------------
+	//           1st
+	//------------------------------
+	// TO AD9371_A S1_REFCLKP  9528_C_13
+	jesd_Tx_axi_0: jesd_Tx@A0010000 {
+		#clock-cells = <0>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x0 0xA0010000 0x1000>;
+
+		clocks = <&clk0_ad9528 4>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy0_tx_clk";
+
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
+		xlnx,subclass = <1>;
+		xlnx,lanes = <0xF>;
+		xlnx,lanesync-enable;
+		xlnx,node-is-transmit;
+
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	};
+	jesd_Rx_axi_0: jesd_Rx@A0011000 {
+		#clock-cells = <0>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x0 0xA0011000 0x1000>;
+
+		clocks = <&clk0_ad9528 4>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy0_rx_clk";
+
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
+		xlnx,subclass = <1>;
+		xlnx,lanes = <0xF>;
+		xlnx,lanesync-enable;
+
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	} ;
+	//------------------------------
+	//           2nd
+	//------------------------------
+	// TO AD9371_A S2_REFCLKP  9528_C_10
+	jesd_Tx_axi_1: jesd_Tx@A0012000 {
+		#clock-cells = <0>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x0 0xA0012000 0x1000>;
+
+		clocks = <&clk0_ad9528 6>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy1_tx_clk";
+
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
+		xlnx,subclass = <1>;
+		xlnx,lanes = <0xF>;
+		xlnx,lanesync-enable;
+		xlnx,node-is-transmit;
+
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	};
+	jesd_Rx_axi_1: jesd_Rx@A0013000 {
+		#clock-cells = <0>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x0 0xA0013000 0x1000>;
+
+		clocks = <&clk0_ad9528 6>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy1_rx_clk";
+
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
+		xlnx,subclass = <1>;
+		xlnx,lanes = <0xF>;
+		xlnx,lanesync-enable;
+
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	} ;
+
+	//------------------------------
+	//           3rd
+	//------------------------------
+	// TO AD9371_C S3_REFCLKP  9528_C_8
+	jesd_Tx_axi_2: jesd_Tx@A0014000 {
+		#clock-cells = <0>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x0 0xA0014000 0x1000>;
+
+		clocks = <&clk0_ad9528 1>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy2_tx_clk";
+
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
+		xlnx,subclass = <1>;
+		xlnx,lanes = <0xF>;
+		xlnx,lanesync-enable;
+		xlnx,node-is-transmit;
+
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	};
+	jesd_Rx_axi_2: jesd_Rx@A0015000 {
+		#clock-cells = <0>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x0 0xA0015000 0x1000>;
+
+		clocks = <&clk0_ad9528 1>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy2_rx_clk";
+
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
+		xlnx,subclass = <1>;
+		xlnx,lanes = <0xF>;
+		xlnx,lanesync-enable;
+
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	} ;
+	//------------------------------
+	//           4th
+	//------------------------------
+	// TO AD9371_D S3_REFCLKP  9528_C_8
+	jesd_Tx_axi_3: jesd_Tx@A0016000 {
+		#clock-cells = <0>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x0 0xA0016000 0x1000>;
+
+		clocks = <&clk0_ad9528 3>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy3_tx_clk";
+
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
+		xlnx,subclass = <1>;
+		xlnx,lanes = <0xF>;
+		xlnx,lanesync-enable;
+		xlnx,node-is-transmit;
+
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	};
+	jesd_Rx_axi_3: jesd_Rx@A0017000 {
+		#clock-cells = <0>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x0 0xA0017000 0x1000>;
+
+		clocks = <&clk0_ad9528 3>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy3_rx_clk";
+
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
+		xlnx,subclass = <1>;
+		xlnx,lanes = <0xF>;
+		xlnx,lanesync-enable;
+
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	} ;
+
+};
+
+
+
+&spi0 {
+
 
 	clk0_ad9528: ad9528-1@0 {
 			#address-cells = <1>;
@@ -184,5 +357,135 @@
 			};
 	};
 
+	trx0_ad9371_a: ad9371-phy-a@1 {
+		compatible = "adi,ad9371";
+		reg = <1>;
+		/* SPI Setup */
+		spi-max-frequency = <15000000>;
+
+		/* Clocks */
+		clocks = <&jesd_Rx_axi_0>, <&jesd_Tx_axi_0>, <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 11>;
+		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
+
+		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk","lo_rx_clk","lo_tx_clk";
+		#clock-cells = <1>;
+
+		/include/ "ad9371_mux.dtsi"
+	};
+
+	trx0_ad9371_b: ad9371-phy-b@2 {
+		compatible = "adi,ad9371";
+		reg = <2>;
+		/* SPI Setup */
+		spi-max-frequency = <15000000>;
+
+		/* Clocks */
+		clocks = <&jesd_Rx_axi_1>, <&jesd_Tx_axi_1>, <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 11>;
+		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
+
+		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk","lo_rx_clk","lo_tx_clk";
+		#clock-cells = <1>;
+
+		/include/ "ad9371_mux.dtsi"
+	};
 
 };
+
+&spi1 {
+
+
+	trx0_ad9371_c: ad9371-phy-c@1 {
+		compatible = "adi,ad9371";
+		reg = <1>;
+		/* SPI Setup */
+		spi-max-frequency = <15000000>;
+
+		/* Clocks */
+		clocks = <&jesd_Rx_axi_2>, <&jesd_Tx_axi_2>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 11>;
+		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
+
+		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk","lo_rx_clk","lo_tx_clk";
+		#clock-cells = <1>;
+
+		/include/ "ad9371_mux.dtsi"
+	};
+
+	trx0_ad9371_d: ad9371-phy-d@2 {
+		compatible = "adi,ad9371";
+		reg = <2>;
+		/* SPI Setup */
+		spi-max-frequency = <15000000>;
+
+		/* Clocks */
+		clocks = <&jesd_Rx_axi_3>, <&jesd_Tx_axi_3>, <&clk0_ad9528 3>, <&clk0_ad9528 3>, <&clk0_ad9528 11>;
+		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
+
+		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk","lo_rx_clk","lo_tx_clk";
+		#clock-cells = <1>;
+
+		/include/ "ad9371_mux.dtsi"
+	};
+
+};
+
+//-------------------------------------------------------------------------------------------
+
+&trx0_ad9371_a {
+	reset-gpios = <&gpio 128 0>; //50
+	//test-gpios = <&gpio0 107 0>;
+	sysref_req-gpios = <&gpio 112 0>; //58
+	//rx2_enable-gpios = <&gpio0 108 0>;
+	//rx1_enable-gpios = <&gpio0 109 0>;
+	//tx2_enable-gpios = <&gpio0 110 0>;
+	//tx1_enable-gpios = <&gpio0 111 0>;
+};
+
+&trx0_ad9371_b {
+	reset-gpios = <&gpio 129 0>; //51
+	sysref_req-gpios = <&gpio 113 0>; //59
+};
+
+&trx0_ad9371_c {
+	reset-gpios = <&gpio 130 0>; //52
+	sysref_req-gpios = <&gpio 114 0>; //60
+};
+
+&trx0_ad9371_d {
+	reset-gpios = <&gpio 131 0>; //53
+	sysref_req-gpios = <&gpio 115 0>; //61
+};
+
+&clk0_ad9528 {
+	reset-gpios = <&gpio 121 0>;
+};
+
+
+// ad9371_dac_fifo_bypass_s 60
+// ad9528_reset_b,       // 59
+// ad9528_sysref_req,    // 58
+// ad9371_tx1_enable,    // 57
+// ad9371_tx2_enable,    // 56
+// ad9371_rx1_enable,    // 55
+// ad9371_rx2_enable,    // 54
+// ad9371_test,          // 53
+// ad9371_reset_b,       // 52
+// ad9371_gpint,         // 51
+// ad9371_gpio_00,       // 50
+// ad9371_gpio_01,       // 49
+// ad9371_gpio_02,       // 48
+// ad9371_gpio_03,       // 47
+// ad9371_gpio_04,       // 46
+// ad9371_gpio_05,       // 45
+// ad9371_gpio_06,       // 44
+// ad9371_gpio_07,       // 43
+// ad9371_gpio_15,       // 42
+// ad9371_gpio_08,       // 41
+// ad9371_gpio_09,       // 40
+// ad9371_gpio_10,       // 39
+// ad9371_gpio_11,       // 38
+// ad9371_gpio_12,       // 37
+// ad9371_gpio_14,       // 36
+// ad9371_gpio_13,       // 35
+// ad9371_gpio_17,       // 34
+// ad9371_gpio_16,       // 33
+// ad9371_gpio_18}));    // 32 + 54

@@ -21,18 +21,22 @@
 //	};
 //};
 
-/// {
-//	fpga_axi: fpga-axi@0 {
-//		interrupt-parent = <&gic>;
-//		compatible = "simple-bus";
-//		#address-cells = <0x2>;
-//		#size-cells = <0x1>;
-//		ranges = <0 0 0 0 0xffffffff>;
-//
-//	};
-//};
+/ {
+	fpga_axi: fpga-axi@0 {
+		interrupt-parent = <&gic>;
+		compatible = "simple-bus";
+		#address-cells = <0x2>;
+		#size-cells = <0x1>;
+		ranges = <0 0 0 0 0xffffffff>;
+
+	};
+};
 
 &spi0 {
+	status = "okay";
+};
+
+&spi1 {
 	status = "okay";
 };
 
