@@ -357,7 +357,7 @@
 			};
 	};
 
-	trx0_ad9371_a: ad9371-phy-a@1 {
+	trx0_ad9371_d: ad937x-phy-1@1 {
 		compatible = "adi,ad9371";
 		reg = <1>;
 		/* SPI Setup */
@@ -373,7 +373,7 @@
 		/include/ "ad9371_mux.dtsi"
 	};
 
-	trx0_ad9371_b: ad9371-phy-b@2 {
+	trx0_ad9371_c: ad937x-phy-2@2 {
 		compatible = "adi,ad9371";
 		reg = <2>;
 		/* SPI Setup */
@@ -394,7 +394,7 @@
 &spi1 {
 
 
-	trx0_ad9371_c: ad9371-phy-c@1 {
+	trx0_ad9371_b: ad937x-phy-3@1 {
 		compatible = "adi,ad9371";
 		reg = <1>;
 		/* SPI Setup */
@@ -410,7 +410,7 @@
 		/include/ "ad9371_mux.dtsi"
 	};
 
-	trx0_ad9371_d: ad9371-phy-d@2 {
+	trx0_ad9371_a: ad937x-phy-4@2 {
 		compatible = "adi,ad9371";
 		reg = <2>;
 		/* SPI Setup */
@@ -430,8 +430,8 @@
 
 //-------------------------------------------------------------------------------------------
 
-&trx0_ad9371_a {
-	reset-gpios = <&gpio 128 0>; //50
+&trx0_ad9371_d {
+	reset-gpios = <&gpio 131 0>; //50
 	//test-gpios = <&gpio0 107 0>;
 	sysref_req-gpios = <&gpio 112 0>; //58
 	//rx2_enable-gpios = <&gpio0 108 0>;
@@ -440,20 +440,22 @@
 	//tx1_enable-gpios = <&gpio0 111 0>;
 };
 
-&trx0_ad9371_b {
-	reset-gpios = <&gpio 129 0>; //51
-	sysref_req-gpios = <&gpio 113 0>; //59
-};
-
 &trx0_ad9371_c {
-	reset-gpios = <&gpio 130 0>; //52
-	sysref_req-gpios = <&gpio 114 0>; //60
+	reset-gpios = <&gpio 130 0>;
+	sysref_req-gpios = <&gpio 113 0>;
 };
 
-&trx0_ad9371_d {
-	reset-gpios = <&gpio 131 0>; //53
-	sysref_req-gpios = <&gpio 115 0>; //61
+&trx0_ad9371_b {
+	reset-gpios = <&gpio 129 0>;
+	sysref_req-gpios = <&gpio 114 0>;
 };
+
+
+&trx0_ad9371_a {
+	reset-gpios = <&gpio 128 0>;
+	sysref_req-gpios = <&gpio 114 0>;
+};
+
 
 &clk0_ad9528 {
 	reset-gpios = <&gpio 121 0>;
