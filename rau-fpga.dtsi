@@ -3,93 +3,93 @@
 &fpga_axi {
 
 
-	rau_glob_info: rau_glob_info@0x40000000 {
+	rau_glob_info: rau_glob_info@0xA0000000 {
 		compatible = "rau,global-info-1.0";
-		reg = <0x40000000 0x10>;
+		reg = <0xA0000000 0x10>;
 	};
 
 	//-------------- RTX carrier channel --------------------------
 	////-------------- UL TX  (有限制)-------------------
-	rtx_chn_axi_tx: RTX-channel-tx@0x40000840 {
+	rtx_chn_axi_tx: RTX-channel-tx@0xA0000840 {
 		#clock-cells = <1>;
 		compatible = "rau,rtx-carrier-channel-0.1";
-		//reg = <0x40000840 0x800>;//总共
-		reg = <0x40000840 0x40>,
-		      <0x40000880 0x40>,
-		      <0x400008C0 0x40>,
-		      <0x40000900 0x40>,
-		      <0x40000940 0x40>,
-		      <0x40000980 0x40>,
-		      <0x400009C0 0x40>,
-		      <0x40000A00 0x40>,
-		      <0x40000A40 0x40>,
-		      <0x40000A80 0x40>,
-		      <0x40000AC0 0x40>,
-		      <0x40000B00 0x40>,
-		      <0x40000B40 0x40>,
-		      <0x40000B80 0x40>,
-		      <0x40000BC0 0x40>,
-		      <0x40000C00 0x40>,
-		      <0x40000C40 0x40>,
-		      <0x40000C80 0x40>,
-		      <0x40000CC0 0x40>,
-		      <0x40000D00 0x40>,
-		      <0x40000D40 0x40>,
-		      <0x40000D80 0x40>,
-		      <0x40000DC0 0x40>,
-		      <0x40000E00 0x40>,
-		      <0x40000E40 0x40>,
-		      <0x40000E80 0x40>,
-		      <0x40000EC0 0x40>,
-		      <0x40000F00 0x40>,
-		      <0x40000F40 0x40>,
-		      <0x40000F80 0x40>,
-		      <0x40000FC0 0x40>,
-		      <0x40001000 0x40>,
-		      <0x40001488 0x08>;// bw rst busy
+		//reg = <0xA0000840 0x800>;//总共
+		reg = <0xA0000840 0x40>,
+		      <0xA0000880 0x40>,
+		      <0xA00008C0 0x40>,
+		      <0xA0000900 0x40>,
+		      <0xA0000940 0x40>,
+		      <0xA0000980 0x40>,
+		      <0xA00009C0 0x40>,
+		      <0xA0000A00 0x40>,
+		      <0xA0000A40 0x40>,
+		      <0xA0000A80 0x40>,
+		      <0xA0000AC0 0x40>,
+		      <0xA0000B00 0x40>,
+		      <0xA0000B40 0x40>,
+		      <0xA0000B80 0x40>,
+		      <0xA0000BC0 0x40>,
+		      <0xA0000C00 0x40>,
+		      <0xA0000C40 0x40>,
+		      <0xA0000C80 0x40>,
+		      <0xA0000CC0 0x40>,
+		      <0xA0000D00 0x40>,
+		      <0xA0000D40 0x40>,
+		      <0xA0000D80 0x40>,
+		      <0xA0000DC0 0x40>,
+		      <0xA0000E00 0x40>,
+		      <0xA0000E40 0x40>,
+		      <0xA0000E80 0x40>,
+		      <0xA0000EC0 0x40>,
+		      <0xA0000F00 0x40>,
+		      <0xA0000F40 0x40>,
+		      <0xA0000F80 0x40>,
+		      <0xA0000FC0 0x40>,
+		      <0xA0001000 0x40>,
+		      <0xA0001488 0x08>;// bw rst busy
 
 		      dfe,node-is-uplink;
 	};
 
 	////-------------- DL RX  --------------------------
 
-	rtx_chn_axi_rx: RTX-channel-rx@0x40000040 {
+	rtx_chn_axi_rx: RTX-channel-rx@0xA0000040 {
 		#clock-cells = <1>;
 		compatible = "rau,rtx-carrier-channel-0.1";
-		//reg = <0x40000040 0x800>;//总共
-		reg = <0x40000040 0x40>,
-		      <0x40000080 0x40>,
-		      <0x400000C0 0x40>,
-		      <0x40000100 0x40>,
-		      <0x40000140 0x40>,
-		      <0x40000180 0x40>,
-		      <0x400001C0 0x40>,
-		      <0x40000200 0x40>,
-		      <0x40000240 0x40>,
-		      <0x40000280 0x40>,
-		      <0x400002C0 0x40>,
-		      <0x40000300 0x40>,
-		      <0x40000340 0x40>,
-		      <0x40000380 0x40>,
-		      <0x400003C0 0x40>,
-		      <0x40000400 0x40>,
-		      <0x40000440 0x40>,
-		      <0x40000480 0x40>,
-		      <0x400004C0 0x40>,
-		      <0x40000500 0x40>,
-		      <0x40000540 0x40>,
-		      <0x40000580 0x40>,
-		      <0x400005C0 0x40>,
-		      <0x40000600 0x40>,
-		      <0x40000640 0x40>,
-		      <0x40000680 0x40>,
-		      <0x400006C0 0x40>,
-		      <0x40000700 0x40>,
-		      <0x40000740 0x40>,
-		      <0x40000780 0x40>,
-		      <0x400007C0 0x40>,
-		      <0x40000800 0x40>,
-		      <0x40001480 0x08>;// bw rst busy
+		//reg = <0xA0000040 0x800>;//总共
+		reg = <0xA0000040 0x40>,
+		      <0xA0000080 0x40>,
+		      <0xA00000C0 0x40>,
+		      <0xA0000100 0x40>,
+		      <0xA0000140 0x40>,
+		      <0xA0000180 0x40>,
+		      <0xA00001C0 0x40>,
+		      <0xA0000200 0x40>,
+		      <0xA0000240 0x40>,
+		      <0xA0000280 0x40>,
+		      <0xA00002C0 0x40>,
+		      <0xA0000300 0x40>,
+		      <0xA0000340 0x40>,
+		      <0xA0000380 0x40>,
+		      <0xA00003C0 0x40>,
+		      <0xA0000400 0x40>,
+		      <0xA0000440 0x40>,
+		      <0xA0000480 0x40>,
+		      <0xA00004C0 0x40>,
+		      <0xA0000500 0x40>,
+		      <0xA0000540 0x40>,
+		      <0xA0000580 0x40>,
+		      <0xA00005C0 0x40>,
+		      <0xA0000600 0x40>,
+		      <0xA0000640 0x40>,
+		      <0xA0000680 0x40>,
+		      <0xA00006C0 0x40>,
+		      <0xA0000700 0x40>,
+		      <0xA0000740 0x40>,
+		      <0xA0000780 0x40>,
+		      <0xA00007C0 0x40>,
+		      <0xA0000800 0x40>,
+		      <0xA0001480 0x08>;// bw rst busy
 
 		clocks = <&rf_port_axi_7 0>, <&rf_port_axi_6 0>, <&rf_port_axi_5 0>, <&rf_port_axi_4 0>,
 		         <&rf_port_axi_3 0>, <&rf_port_axi_2 0>, <&rf_port_axi_1 0>, <&rf_port_axi_0 0>;
@@ -100,11 +100,11 @@
 	};
 
 
-	rf_port_axi_0: RF-Port-1A@0x40001040 {
+	rf_port_axi_0: RF-Port-1A@0xA0001040 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
-		reg = <0x40001040 0x40>,
-		      <0x400014C0 0x04>; // Port_SW_Control
+		reg = <0xA0001040 0x40>,
+		      <0xA00014C0 0x04>; // Port_SW_Control
 
 		clocks = <&trx0_ad9371_a 3>, <&trx0_ad9371_a 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -113,11 +113,11 @@
 
 	};
 
-	rf_port_axi_1: RF-Port-1B@0x40001080 {
+	rf_port_axi_1: RF-Port-1B@0xA0001080 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
-		reg = <0x40001080 0x40>,
-		      <0x400014C4 0x04>; // Port_SW_Control
+		reg = <0xA0001080 0x40>,
+		      <0xA00014C4 0x04>; // Port_SW_Control
 
 		clocks = <&trx0_ad9371_a 3>, <&trx0_ad9371_a 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -125,11 +125,11 @@
 		clock-output-names = "rf1_lo_tx_freq", "rf1_lo_rx_freq";
 	};
 
-	rf_port_axi_2: RF-Port-2A@0x400010C0 {
+	rf_port_axi_2: RF-Port-2A@0xA00010C0 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
-		reg = <0x400010C0 0x40>,
-		      <0x400014C8 0x04>; // Port_SW_Control
+		reg = <0xA00010C0 0x40>,
+		      <0xA00014C8 0x04>; // Port_SW_Control
 
 		clocks = <&trx0_ad9371_b 3>, <&trx0_ad9371_b 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -137,11 +137,11 @@
 		clock-output-names = "rf2_lo_tx_freq", "rf2_lo_rx_freq";
 	};
 
-	rf_port_axi_3: RF-Port-2B@0x40001100 {
+	rf_port_axi_3: RF-Port-2B@0xA0001100 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
-		reg = <0x40001100 0x40>,
-		      <0x400014CC 0x04>; // Port_SW_Control
+		reg = <0xA0001100 0x40>,
+		      <0xA00014CC 0x04>; // Port_SW_Control
 
 		clocks = <&trx0_ad9371_b 3>, <&trx0_ad9371_b 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -152,11 +152,11 @@
 
 	//-------------- port4 ~ port7 --------------------------
 
-	rf_port_axi_4: RF-Port-3A@0x40001140 {
+	rf_port_axi_4: RF-Port-3A@0xA0001140 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
-		reg = <0x40001140 0x40>,
-		      <0x400014D0 0x04>; // Port_SW_Control
+		reg = <0xA0001140 0x40>,
+		      <0xA00014D0 0x04>; // Port_SW_Control
 
 		clocks = <&trx0_ad9371_c 3>, <&trx0_ad9371_c 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -165,11 +165,11 @@
 
 	};
 
-	rf_port_axi_5: RF-Port-3B@0x40001180 {
+	rf_port_axi_5: RF-Port-3B@0xA0001180 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
-		reg = <0x40001180 0x40>,
-		      <0x400014D4 0x04>; // Port_SW_Control
+		reg = <0xA0001180 0x40>,
+		      <0xA00014D4 0x04>; // Port_SW_Control
 
 		clocks = <&trx0_ad9371_c 3>, <&trx0_ad9371_c 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -177,11 +177,11 @@
 		clock-output-names = "rf5_lo_tx_freq", "rf5_lo_rx_freq";
 	};
 
-	rf_port_axi_6: RF-Port-4A@0x400011C0 {
+	rf_port_axi_6: RF-Port-4A@0xA00011C0 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
-		reg = <0x400011C0 0x40>,
-		      <0x400014D8 0x04>; // Port_SW_Control
+		reg = <0xA00011C0 0x40>,
+		      <0xA00014D8 0x04>; // Port_SW_Control
 
 		clocks = <&trx0_ad9371_d 3>, <&trx0_ad9371_d 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -189,11 +189,11 @@
 		clock-output-names = "rf6_lo_tx_freq", "rf6_lo_rx_freq";
 	};
 
-	rf_port_axi_7: RF-Port-4B@0x40001200 {
+	rf_port_axi_7: RF-Port-4B@0xA0001200 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
-		reg = <0x40001200 0x40>,
-		      <0x400014DC 0x04>; // Port_SW_Control
+		reg = <0xA0001200 0x40>,
+		      <0xA00014DC 0x04>; // Port_SW_Control
 
 		clocks = <&trx0_ad9371_d 3>, <&trx0_ad9371_d 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
