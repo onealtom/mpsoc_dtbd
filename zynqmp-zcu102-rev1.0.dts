@@ -16,4 +16,5 @@
 / {
 	model = "ZynqMP ZCU102 Rev1.0";
 	compatible = "xlnx,zynqmp-zcu102-rev1.0", "xlnx,zynqmp-zcu102", "xlnx,zynqmp";
+	/include/ "dt_ver.dtsi"
 };
