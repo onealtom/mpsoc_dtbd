@@ -91,3 +91,4 @@
 };
 
 
+/include/ "rau-fpga.dtsi"
