@@ -1,4 +1,7 @@
-all: rauv2
+all: markprint rauv2 gen_swu
+
+markprint:
+	./version.sh
 
 rauv2:
 	cpp -DOSC_122M88 -Iinclude -E -P -xassembler-with-cpp rau-mpsoc.dts > rau-mpsoc.tmp.dts
@@ -12,3 +15,13 @@ clean:clean_swu
 clean_swu:
 	rm -rf swu/*.swu
 	rm -rf swu/*.tar.gz
+
+
+install:
+	cp ./devicetree.dtb $(DTB_DEST)
+
+gen_swu:
+	tar -czf ./swu/dtb.tar.gz devicetree.dtb
+	cd swu && ./generate_swu.sh
+
+

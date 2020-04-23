@@ -1,0 +1,6 @@
+
+	dt_ver {
+		builder = "$BUILDER";
+		gentime = "$SH_TIME";
+		commit = "$HASH_VERSION";
+	};
