@@ -3,14 +3,14 @@
 &fpga_axi {
 
 
-	rau_glob_info: rau_glob_info@0xA0000000 {
+	rau_glob_info: rau_glob_info@a0000000 {
 		compatible = "rau,global-info-1.0";
 		reg = <0x0 0xA0000000 0x10>;
 	};
 
 	//-------------- RTX carrier channel --------------------------
 	////-------------- UL TX  (有限制)-------------------
-	rtx_chn_axi_tx: RTX-channel-tx@0xA0000840 {
+	rtx_chn_axi_tx: RTX-channel-tx@a0000840 {
 		#clock-cells = <1>;
 		compatible = "rau,rtx-carrier-channel-0.1";
 		//reg = <0xA0000840 0x800>;//总共
@@ -53,7 +53,7 @@
 
 	////-------------- DL RX  --------------------------
 
-	rtx_chn_axi_rx: RTX-channel-rx@0xA0000040 {
+	rtx_chn_axi_rx: RTX-channel-rx@a0000040 {
 		#clock-cells = <1>;
 		compatible = "rau,rtx-carrier-channel-0.1";
 		//reg = <0xA0000040 0x800>;//总共
@@ -100,7 +100,7 @@
 	};
 
 
-	rf_port_axi_0: RF-Port-1A@0xA0001040 {
+	rf_port_axi_0: RF-Port-1A@a0001040 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
 		reg = <0x0 0xA0001040 0x40>,
@@ -113,7 +113,7 @@
 
 	};
 
-	rf_port_axi_1: RF-Port-1B@0xA0001080 {
+	rf_port_axi_1: RF-Port-1B@a0001080 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
 		reg = <0x0 0xA0001080 0x40>,
@@ -125,7 +125,7 @@
 		clock-output-names = "rf1_lo_tx_freq", "rf1_lo_rx_freq";
 	};
 
-	rf_port_axi_2: RF-Port-2A@0xA00010C0 {
+	rf_port_axi_2: RF-Port-2A@a00010c0 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
 		reg = <0x0 0xA00010C0 0x40>,
@@ -137,7 +137,7 @@
 		clock-output-names = "rf2_lo_tx_freq", "rf2_lo_rx_freq";
 	};
 
-	rf_port_axi_3: RF-Port-2B@0xA0001100 {
+	rf_port_axi_3: RF-Port-2B@a0001100 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
 		reg = <0x0 0xA0001100 0x40>,
@@ -152,7 +152,7 @@
 
 	//-------------- port4 ~ port7 --------------------------
 
-	rf_port_axi_4: RF-Port-3A@0xA0001140 {
+	rf_port_axi_4: RF-Port-3A@a0001140 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
 		reg = <0x0 0xA0001140 0x40>,
@@ -165,7 +165,7 @@
 
 	};
 
-	rf_port_axi_5: RF-Port-3B@0xA0001180 {
+	rf_port_axi_5: RF-Port-3B@a0001180 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
 		reg = <0x0 0xA0001180 0x40>,
@@ -177,7 +177,7 @@
 		clock-output-names = "rf5_lo_tx_freq", "rf5_lo_rx_freq";
 	};
 
-	rf_port_axi_6: RF-Port-4A@0xA00011C0 {
+	rf_port_axi_6: RF-Port-4A@a00011c0 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
 		reg = <0x0 0xA00011C0 0x40>,
@@ -189,7 +189,7 @@
 		clock-output-names = "rf6_lo_tx_freq", "rf6_lo_rx_freq";
 	};
 
-	rf_port_axi_7: RF-Port-4B@0xA0001200 {
+	rf_port_axi_7: RF-Port-4B@a0001200 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
 		reg = <0x0 0xA0001200 0x40>,
