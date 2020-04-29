@@ -1,6 +1,26 @@
+#define FAN0_IRQ_NUM    89
+#define FAN1_IRQ_NUM    90
+#define FAN2_IRQ_NUM    91
 
+#define ECP0_IRQ_NUM    92
+#define ECP1_IRQ_NUM    93
+#define ECP2_IRQ_NUM    94
+#define ECP3_IRQ_NUM    95
+
+#define LINK0_IRQ_NUM   96
+//-------------------------
+#define LINK1_IRQ_NUM   104
+#define LINK2_IRQ_NUM   105
+#define LINK3_IRQ_NUM   106
+#define SFPIIC0_IRQ_NUM   107
+#define SFPIIC1_IRQ_NUM   108
+#define SFPIIC2_IRQ_NUM   109
+#define SFPIIC3_IRQ_NUM   110
+
+#define INTC0_IRQ_NUM     111
 
 &fpga_axi {
+
 
 
 	rau_glob_info: rau_glob_info@a0000000 {
@@ -213,55 +233,65 @@
 		compatible = "xlnx,xps-intc-1.00.a";
 		interrupt-controller ;
 		interrupt-parent = <&gic>;
-		interrupts = <0 111 4>;
+		interrupts = <0 INTC0_IRQ_NUM 4>;
 		reg = < 0x0 0xA0024000 0x1000 >;
 		xlnx,kind-of-intr = <0x1>;
 		xlnx,num-intr-inputs = <0x10>;
 	};
 
+	/*sfp i2c 0*/
 	axi_i2c_0: axii2c0@a0020000 {
 		compatible = "xlnx,xps-iic-2.00.a";
-		//interrupt-parent = <&gic>;
-		interrupt-parent = <&axi_intc_1>;
+		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
 		reg = < 0x0 0xA0020000 0x1000 >;
-		interrupts = <0 2 >;
+		interrupts = <0 SFPIIC0_IRQ_NUM 4>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 	};
 
-
-
+	/*sfp i2c 1*/
 	axi_i2c_1: axii2c1@a0021000 {
 		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
 		reg = < 0x0 0xA0021000 0x1000 >;
-		interrupts = <0 108 1>;
+		interrupts = <0 SFPIIC1_IRQ_NUM 4>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 	};
 
+	/*sfp i2c 2*/
 	axi_i2c_2: axii2c2@a0022000 {
 		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
 		reg = < 0x0 0xA0022000 0x1000 >;
-		interrupts = <0 109 1>;
+		interrupts = <0 SFPIIC2_IRQ_NUM 4>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 	};
 
+	/*sfp i2c 3*/
 	axi_i2c_3: axii2c3@a0023000 {
 		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
 		reg = < 0x0 0xA0023000 0x1000 >;
-		interrupts = <0 110 1>;
+		interrupts = <0 SFPIIC3_IRQ_NUM 4>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 	};
 
-
+	/*RTC I2C*/
+	axi_i2c_4: axii2c4@a0025000 {
+		compatible = "xlnx,xps-iic-2.00.a";
+		interrupt-parent = <&axi_intc_1>;
+		clocks = <&clkc 71>;
+		reg = < 0x0 0xA0025000 0x1000 >;
+		interrupts = <0 2 >;
+		#address-cells = <1>;
+		#size-cells = <0>;
+	};
 
 };
