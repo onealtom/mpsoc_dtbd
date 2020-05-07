@@ -21,10 +21,27 @@
 };
 
 
+&watchdog0 {
+	status = "okay";
+	reset-on-timeout;
+};
+
+//watchdog: watchdog {
+//	/* ADM706 */
+//	compatible = "linux,wdt-gpio";
+//	gpios = <&gpio3 9 GPIO_ACTIVE_LOW>;
+//	hw_algo = "toggle";
+//	hw_margin_ms = <1600>;
+//};
 
 &i2c0 {
 	status = "okay";
 
+	//eeprom@3a {
+	//	compatible = "atmel,24c32";
+	//	reg = <0x3a>;
+	//	pagesize = <256>;
+	//};
 };
 
 &i2c1 {

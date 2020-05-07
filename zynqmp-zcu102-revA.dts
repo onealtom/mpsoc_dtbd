@@ -28,11 +28,8 @@
 		gpio0 = &gpio;
 		i2c0 = &i2c0;
 		i2c1 = &i2c1;
-		//mmc0 = &sdhci1;
-		//mmc1 = &sdhci0;
 		mmc0 = &sdhci0;
 		mmc1 = &sdhci1;
-		rtc0 = &rtc;
 		serial0 = &uart0;
 		serial1 = &uart1;
 		serial2 = &dcc;
@@ -129,12 +126,7 @@
 	status = "okay";
 	clock-frequency = <400000>;
 
-	cps1848@6c {
-		compatible = "si5383";
-		reg = <0x6c>;
-		reset-gpios = <&gpio 172 0>;	// 95+77
-/include/ "si5383_regmap.dtsi"
-	};
+
 
 
 };
@@ -373,9 +365,6 @@
 	};
 };
 
-&rtc {
-	status = "okay";
-};
 
 /* eMMC mmc0: SDHCI controller on ff160000.sdhci */
 &sdhci0 {

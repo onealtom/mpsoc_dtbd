@@ -227,24 +227,24 @@
 
 &fpga_axi {
 
-	//axi_intc_1: interrupt-controller@a0024000 {
-	//	#interrupt-cells = <2>;
-	//	clocks = <&clkc 71>;
-	//	compatible = "xlnx,xps-intc-1.00.a";
-	//	interrupt-controller ;
-	//	interrupt-parent = <&gic>;
-	//	interrupts = <0 INTC0_IRQ_NUM 4>;
-	//	reg = < 0x0 0xA0024000 0x1000 >;
-	//	xlnx,kind-of-intr = <0x1>;
-	//	xlnx,num-intr-inputs = <0x10>;
-	//};
+	axi_intc_1: interrupt-controller@a0024000 {
+		#interrupt-cells = <2>;
+		clocks = <&clkc 71>;
+		compatible = "xlnx,xps-intc-1.00.a";
+		interrupt-controller ;
+		interrupt-parent = <&gic>;
+		interrupts = <0 INTC0_IRQ_NUM 4>;
+		reg = < 0x0 0xA0024000 0x1000 >;
+		xlnx,kind-of-intr = <0x1>;
+		xlnx,num-intr-inputs = <0x10>;
+	};
 
 	/*sfp i2c 0*/
 	axi_i2c_0: axii2c0@a0020000 {
 		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
-		reg = < 0x0 0xA0020000 0x1000 >;
+		reg = < 0x0 0xa0020000 0x1000 >;
 		interrupts = <0 SFPIIC0_IRQ_NUM 4>;
 		#address-cells = <1>;
 		#size-cells = <0>;
@@ -255,7 +255,7 @@
 		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
-		reg = < 0x0 0xA0021000 0x1000 >;
+		reg = < 0x0 0xa0021000 0x1000 >;
 		interrupts = <0 SFPIIC1_IRQ_NUM 4>;
 		#address-cells = <1>;
 		#size-cells = <0>;
@@ -266,7 +266,7 @@
 		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
-		reg = < 0x0 0xA0022000 0x1000 >;
+		reg = < 0x0 0xa0022000 0x1000 >;
 		interrupts = <0 SFPIIC2_IRQ_NUM 4>;
 		#address-cells = <1>;
 		#size-cells = <0>;
@@ -277,21 +277,28 @@
 		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
-		reg = < 0x0 0xA0023000 0x1000 >;
+		reg = < 0x0 0xa0023000 0x1000 >;
 		interrupts = <0 SFPIIC3_IRQ_NUM 4>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 	};
 
-//	/*RTC I2C*/
-//	axi_i2c_4: axii2c4@a0025000 {
-//		compatible = "xlnx,xps-iic-2.00.a";
-//		interrupt-parent = <&axi_intc_1>;
-//		clocks = <&clkc 71>;
-//		reg = < 0x0 0xA0025000 0x1000 >;
-//		interrupts = <0 2 >;
-//		#address-cells = <1>;
-//		#size-cells = <0>;
-//	};
+	/*RTC I2C*/
+	axi_i2c_4: axii2c4@a0025000 {
+		compatible = "xlnx,xps-iic-2.00.a";
+		interrupt-parent = <&axi_intc_1>;
+		clocks = <&clkc 71>;
+		reg = < 0x0 0xA0025000 0x1000 >;
+		interrupts = <0 2 >;
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		rtc_ext: ds1307@68 {
+			compatible = "dallas,ds1307";
+			reg = <0x68>;
+		};
+	};
 
 };
+
+
