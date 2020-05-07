@@ -78,7 +78,6 @@
 #define MIO_75 ""
 #define MIO_76 ""
 #define MIO_77 ""
-#define MIO_78 ""
 
 #define EMIO_00 "alarm1"
 #define EMIO_01 "alarm2"
