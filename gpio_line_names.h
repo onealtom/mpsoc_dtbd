@@ -1,4 +1,3 @@
-
 #define MIO_00 ""
 #define MIO_01 ""
 #define MIO_02 ""
@@ -53,7 +52,6 @@
 #define MIO_51 ""
 #define MIO_52 ""
 #define MIO_53 ""
-
 #define MIO_54 ""
 #define MIO_55 ""
 #define MIO_56 ""
@@ -78,7 +76,6 @@
 #define MIO_75 ""
 #define MIO_76 ""
 #define MIO_77 ""
-
 #define EMIO_00 "alarm1"
 #define EMIO_01 "alarm2"
 #define EMIO_02 "alarm3"
@@ -143,7 +140,6 @@
 #define EMIO_61 ""
 #define EMIO_62 ""
 #define EMIO_63 ""
-
 #define EMIO_64 ""
 #define EMIO_65 ""
 #define EMIO_66 ""
@@ -175,3 +171,4 @@
 #define EMIO_92 ""
 #define EMIO_93 ""
 #define EMIO_94 ""
+#define EMIO_95 ""

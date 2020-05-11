@@ -398,7 +398,7 @@
 //};
 
 &watchdog0 {
-	status = "okay";
+	status = "disabled";
 };
 
 &xilinx_ams {
