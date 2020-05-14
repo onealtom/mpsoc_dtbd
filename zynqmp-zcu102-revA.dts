@@ -103,12 +103,22 @@
 	//phy-mode = "rgmii-id";
 	//pinctrl-names = "default";
 	//pinctrl-0 = <&pinctrl_gem3_default>;
+
+	phy-reset-gpio = <&gpio 44 1>;
+	phy-reset-duration = <50>;
+	phy-reset-active-low;
+
 	phy0: phy@0 {
 		reg = <0>;
+		marvell,reg-init=<3 16 0xff00 0x1e
+				  3 17 0xfff0 0x0a>;
+
 		ti,rx-internal-delay = <0x8>;
 		ti,tx-internal-delay = <0xa>;
 		ti,fifo-depth = <0x1>;
 		ti,rxctrl-strap-worka;
+
+		//reset-gpios = <&gpio 44 1>;
 	};
 };
 
@@ -330,8 +340,12 @@
 	};
 
 	pinctrl_gpio_default: gpio-default {
-
+		pins = "MIO36","MIO37","MIO38","MIO39", "MIO40", "MIO41", "MIO42", "MIO43" ;
 	};
+
+	//pinctrl_ad9371a_rst: ad9371a_rst {
+	//	pins = "MIO50" ;
+	//};
 };
 
 &qspi {
