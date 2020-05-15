@@ -456,7 +456,7 @@
 /* trx0_ad9371_*  fmc_clk:                  clk0_ad9528 11		clk0_ad9545 4*/
 
 
-	trx0_ad9371_a: ad937x-phy-1@1 {
+	trx0_ad9371_d: ad937x-phy-1@1 {
 		compatible = "adi,ad9371";
 		reg = <1>;
 		/* SPI Setup */
@@ -476,7 +476,7 @@
 		/include/ "ad9371_mux.dtsi"
 	};
 
-	trx0_ad9371_b: ad937x-phy-2@2 {
+	trx0_ad9371_c: ad937x-phy-2@2 {
 		compatible = "adi,ad9371";
 		reg = <2>;
 		/* SPI Setup */
@@ -501,7 +501,7 @@
 &spi1 {
 
 
-	trx0_ad9371_c: ad937x-phy-3@1 {
+	trx0_ad9371_b: ad937x-phy-3@1 {
 		compatible = "adi,ad9371";
 		reg = <1>;
 		/* SPI Setup */
@@ -521,7 +521,7 @@
 		/include/ "ad9371_mux.dtsi"
 	};
 
-	trx0_ad9371_d: ad937x-phy-4@2 {
+	trx0_ad9371_a: ad937x-phy-4@2 {
 		compatible = "adi,ad9371";
 		reg = <2>;
 		/* SPI Setup */

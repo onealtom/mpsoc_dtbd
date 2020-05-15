@@ -126,7 +126,7 @@
 		reg = <0x0 0xA0001040 0x40>,
 		      <0x0 0xA00014C0 0x04>; // Port_SW_Control
 
-		clocks = <&trx0_ad9371_a 3>, <&trx0_ad9371_a 4> ;
+		clocks = <&trx0_ad9371_d 3>, <&trx0_ad9371_d 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
 
 		clock-output-names = "rf0_lo_tx_freq", "rf0_lo_rx_freq";
@@ -139,7 +139,7 @@
 		reg = <0x0 0xA0001080 0x40>,
 		      <0x0 0xA00014C4 0x04>; // Port_SW_Control
 
-		clocks = <&trx0_ad9371_a 3>, <&trx0_ad9371_a 4> ;
+		clocks = <&trx0_ad9371_d 3>, <&trx0_ad9371_d 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
 
 		clock-output-names = "rf1_lo_tx_freq", "rf1_lo_rx_freq";
@@ -151,7 +151,7 @@
 		reg = <0x0 0xA00010C0 0x40>,
 		      <0x0 0xA00014C8 0x04>; // Port_SW_Control
 
-		clocks = <&trx0_ad9371_b 3>, <&trx0_ad9371_b 4> ;
+		clocks = <&trx0_ad9371_c 3>, <&trx0_ad9371_c 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
 
 		clock-output-names = "rf2_lo_tx_freq", "rf2_lo_rx_freq";
@@ -163,7 +163,7 @@
 		reg = <0x0 0xA0001100 0x40>,
 		      <0x0 0xA00014CC 0x04>; // Port_SW_Control
 
-		clocks = <&trx0_ad9371_b 3>, <&trx0_ad9371_b 4> ;
+		clocks = <&trx0_ad9371_c 3>, <&trx0_ad9371_c 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
 
 		clock-output-names = "rf3_lo_tx_freq", "rf3_lo_rx_freq";
@@ -178,7 +178,7 @@
 		reg = <0x0 0xA0001140 0x40>,
 		      <0x0 0xA00014D0 0x04>; // Port_SW_Control
 
-		clocks = <&trx0_ad9371_c 3>, <&trx0_ad9371_c 4> ;
+		clocks = <&trx0_ad9371_b 3>, <&trx0_ad9371_b 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
 
 		clock-output-names = "rf4_lo_tx_freq", "rf4_lo_rx_freq";
@@ -191,7 +191,7 @@
 		reg = <0x0 0xA0001180 0x40>,
 		      <0x0 0xA00014D4 0x04>; // Port_SW_Control
 
-		clocks = <&trx0_ad9371_c 3>, <&trx0_ad9371_c 4> ;
+		clocks = <&trx0_ad9371_b 3>, <&trx0_ad9371_b 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
 
 		clock-output-names = "rf5_lo_tx_freq", "rf5_lo_rx_freq";
@@ -203,7 +203,7 @@
 		reg = <0x0 0xA00011C0 0x40>,
 		      <0x0 0xA00014D8 0x04>; // Port_SW_Control
 
-		clocks = <&trx0_ad9371_d 3>, <&trx0_ad9371_d 4> ;
+		clocks = <&trx0_ad9371_a 3>, <&trx0_ad9371_a 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
 
 		clock-output-names = "rf6_lo_tx_freq", "rf6_lo_rx_freq";
@@ -215,7 +215,7 @@
 		reg = <0x0 0xA0001200 0x40>,
 		      <0x0 0xA00014DC 0x04>; // Port_SW_Control
 
-		clocks = <&trx0_ad9371_d 3>, <&trx0_ad9371_d 4> ;
+		clocks = <&trx0_ad9371_a 3>, <&trx0_ad9371_a 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
 
 		clock-output-names = "rf7_lo_tx_freq", "rf7_lo_rx_freq";
