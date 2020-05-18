@@ -62,24 +62,24 @@
 			reg = < 0x0 0xb0000000 0x1000 >;
 		};
 
-		mcpri0@b0000000 {
+		mcpri0@b0011000 {
 			compatible = "generic-uio";
-			reg = < 0x0 0xb0000000 0x1000 >;
+			reg = < 0x0 0xb0011000 0x1000 >;
 		};
 
-		mcpri1@b0000000 {
+		mcpri1@b0011000 {
 			compatible = "generic-uio";
-			reg = < 0x0 0xb0000000 0x1000 >;
+			reg = < 0x0 0xb0011000 0x1000 >;
 		};
 
-		mcpri2@b0000000 {
+		mcpri2@b0011000 {
 			compatible = "generic-uio";
-			reg = < 0x0 0xb0000000 0x1000 >;
+			reg = < 0x0 0xb0011000 0x1000 >;
 		};
 
-		mcpri3@b0000000 {
+		mcpri3@b0011000 {
 			compatible = "generic-uio";
-			reg = < 0x0 0xb0000000 0x1000 >;
+			reg = < 0x0 0xb0011000 0x1000 >;
 		};
 
 		cpri0-irq@c8 {
