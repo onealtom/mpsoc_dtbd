@@ -1,5 +1,6 @@
 
 #include <dt-bindings/iio/frequency/ad9528.h>
+#include <dt-bindings/interrupt-controller/irq.h>
 
 //#define USE_AD9545DRV_CFG_AD9528
 
@@ -544,25 +545,35 @@
 };
 
 //-------------------------------------------------------------------------------------------
+//#define GPIO_AD937X_1_GPINT 		135
+//#define GPIO_AD937X_2_GPINT 		134
+//#define GPIO_AD937X_3_GPINT 		133
+//#define GPIO_AD937X_4_GPINT 		132
+
+#define GPIO_AD937X_1_GPINT 		30
+#define GPIO_AD937X_2_GPINT 		134
+#define GPIO_AD937X_3_GPINT 		133
+#define GPIO_AD937X_4_GPINT 		31
 
 &trx0_ad9371_d {
 	reset-gpios = <&gpio 131 0>; //50
-	//test-gpios = <&gpio0 107 0>;
-//	sysref_req-gpios = <&gpio 112 0>; //58
-	//rx2_enable-gpios = <&gpio0 108 0>;
-	//rx1_enable-gpios = <&gpio0 109 0>;
-	//tx2_enable-gpios = <&gpio0 110 0>;
-	//tx1_enable-gpios = <&gpio0 111 0>;
+
+	interrupt-parent = <&gpio>;
+	interrupts = <GPIO_AD937X_1_GPINT IRQ_TYPE_EDGE_RISING>;
 };
 
 &trx0_ad9371_c {
 	reset-gpios = <&gpio 130 0>;
-//	sysref_req-gpios = <&gpio 113 0>;
+
+	interrupt-parent = <&gpio>;
+	interrupts = <GPIO_AD937X_2_GPINT IRQ_TYPE_EDGE_RISING>;
 };
 
 &trx0_ad9371_b {
 	reset-gpios = <&gpio 129 0>;
-//	sysref_req-gpios = <&gpio 114 0>;
+
+	interrupt-parent = <&gpio>;
+	interrupts = <GPIO_AD937X_3_GPINT IRQ_TYPE_EDGE_RISING>;
 };
 
 
@@ -570,6 +581,9 @@
 	reset-gpios = <&gpio 128 0>;
 	sysref_req-gpios = <&gpio 120 0>;
 	sysref_req_controller=<1>;
+
+	interrupt-parent = <&gpio>;
+	interrupts = <GPIO_AD937X_4_GPINT IRQ_TYPE_EDGE_RISING>;
 };
 
 
