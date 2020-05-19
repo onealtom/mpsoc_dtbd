@@ -280,16 +280,20 @@
 			adi,refa-diff-rcv-enable=<1>;	//rj
 
 #if defined (OSC_122M88)
-            adi,refa-r-div = <8>;	// rj <32>;
+            adi,refa-r-div = <132>;	// rj <32>;
 #elif defined (OSC_30M72)
-			adi,refa-r-div = <128>;
+			adi,refa-r-div = <132>;
 #endif
 			//adi,osc-in-cmos-neg-inp-enable;
 
 			adi,refb-r-div = <16>;	// rj
 
 			/* PLL1 config */
+#if defined (OSC_122M88)
 			adi,pll1-feedback-div = <64>;	// <256>;
+#elif defined (OSC_30M72)
+			adi,pll1-feedback-div = <16>;
+#endif
 
 			adi,pll1-charge-pump-current-nA = <63500>;
 
