@@ -9,7 +9,7 @@
 		/* rx framer */
 		adi,jesd204-rx-framer-m = <4>;
 		adi,jesd204-rx-framer-scramble = <1>;
-		adi,jesd204-rx-framer-serializer-lanes-enabled = <0xF>;
+		adi,jesd204-rx-framer-serializer-lanes-enabled = <5>;
 
 		/* obs frame */
 		adi,jesd204-obs-framer-m = <2>;
@@ -19,7 +19,7 @@
 		/* tx deframer */
 		adi,jesd204-deframer-m = <4>;
 		adi,jesd204-deframer-scramble = <1>;
-		adi,jesd204-deframer-deserializer-lanes-enabled = <0xF>;
+		adi,jesd204-deframer-deserializer-lanes-enabled = <5>;
 
 		adi,jesd204-obs-framer-over-sample = <0>;
 

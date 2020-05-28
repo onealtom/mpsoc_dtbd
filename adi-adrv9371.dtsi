@@ -23,9 +23,9 @@
 		clock-output-names = "jesd_phy0_tx_clk";
 
 		xlnx,frames-per-multiframe = <32>;
-		xlnx,bytes-per-frame = <2>;
+		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-		xlnx,lanes = <0xF>;
+		xlnx,lanes = <0x3>;
 		xlnx,lanesync-enable;
 		xlnx,node-is-transmit;
 
@@ -46,9 +46,9 @@
 		clock-output-names = "jesd_phy0_rx_clk";
 
 		xlnx,frames-per-multiframe = <32>;
-		xlnx,bytes-per-frame = <2>;
+		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-		xlnx,lanes = <0xF>;
+		xlnx,lanes = <0x3>;
 		xlnx,lanesync-enable;
 
 		xlnx,scramble-enable;
@@ -72,9 +72,9 @@
 		clock-output-names = "jesd_phy1_tx_clk";
 
 		xlnx,frames-per-multiframe = <32>;
-		xlnx,bytes-per-frame = <2>;
+		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-		xlnx,lanes = <0xF>;
+		xlnx,lanes = <0x3>;
 		xlnx,lanesync-enable;
 		xlnx,node-is-transmit;
 
@@ -95,9 +95,9 @@
 		clock-output-names = "jesd_phy1_rx_clk";
 
 		xlnx,frames-per-multiframe = <32>;
-		xlnx,bytes-per-frame = <2>;
+		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-		xlnx,lanes = <0xF>;
+		xlnx,lanes = <0x3>;
 		xlnx,lanesync-enable;
 
 		xlnx,scramble-enable;
@@ -122,9 +122,9 @@
 		clock-output-names = "jesd_phy2_tx_clk";
 
 		xlnx,frames-per-multiframe = <32>;
-		xlnx,bytes-per-frame = <2>;
+		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-		xlnx,lanes = <0xF>;
+		xlnx,lanes = <0x3>;
 		xlnx,lanesync-enable;
 		xlnx,node-is-transmit;
 
@@ -145,9 +145,9 @@
 		clock-output-names = "jesd_phy2_rx_clk";
 
 		xlnx,frames-per-multiframe = <32>;
-		xlnx,bytes-per-frame = <2>;
+		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-		xlnx,lanes = <0xF>;
+		xlnx,lanes = <0x3>;
 		xlnx,lanesync-enable;
 
 		xlnx,scramble-enable;
@@ -171,9 +171,9 @@
 		clock-output-names = "jesd_phy3_tx_clk";
 
 		xlnx,frames-per-multiframe = <32>;
-		xlnx,bytes-per-frame = <2>;
+		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-		xlnx,lanes = <0xF>;
+		xlnx,lanes = <0x3>;
 		xlnx,lanesync-enable;
 		xlnx,node-is-transmit;
 
@@ -194,9 +194,9 @@
 		clock-output-names = "jesd_phy3_rx_clk";
 
 		xlnx,frames-per-multiframe = <32>;
-		xlnx,bytes-per-frame = <2>;
+		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-		xlnx,lanes = <0xF>;
+		xlnx,lanes = <0x3>;
 		xlnx,lanesync-enable;
 
 		xlnx,scramble-enable;
