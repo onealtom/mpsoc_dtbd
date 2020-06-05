@@ -118,7 +118,34 @@
 
 
 	};
+#define USE_AXCHUB
+#if defined (USE_AXCHUB)
+	axchub: axchub@a0001540 {
+		compatible = "rau,axchub-0.1";
+		reg = <0x0 0xA0001540 0x1800>;//总共
+		//reg = <0x0 0xA0001540 0x600>,
+		//      <0x0 0xA0001B40 0x600>,
+		//      <0x0 0xA0002140 0x600>,
+		//      <0x0 0xA0002740 0x600>;
+	};
 
+//	axchub_0: axchub-0@a0001540 {
+//		compatible = "rau,axchub-0.1";
+//		reg = <0x0 0xA0001540 0x600>;//总共
+//	};
+//	axchub_1: axchub-1@a0001b40 {
+//		compatible = "rau,axchub-0.1";
+//		reg = <0x0 0xA0001B40 0x600>;//总共
+//	};
+//	axchub_2: axchub-2@a0002140 {
+//		compatible = "rau,axchub-0.1";
+//		reg = <0x0 0xA0002140 0x600>;//总共
+//	};
+//	axchub_3: axchub-3@a0002740 {
+//		compatible = "rau,axchub-0.1";
+//		reg = <0x0 0xA0002740 0x600>;//总共
+//	};
+#else
 	//-------------- CPRI Route --------------------------
 	cpri_route_0: cpri-route-0@a0001540 {
 		compatible = "rau,cpri-route-0.1";
@@ -232,7 +259,7 @@
 		      <0x0 0xA0002CC0 0x40>,
 		      <0x0 0xA0002D00 0x40>;
 	};
-
+#endif
 
 	rf_port_axi_0: RF-Port-1A@a0001040 {
 		#clock-cells = <1>;
