@@ -364,6 +364,14 @@
 
 
 
+	mmi_ledc: mmi_ledc@a0001400 {
+		compatible = "rau,emmi-ledc";
+		reg = <0x0 0xA0001400 0x40>;
+
+	};
+
+
+
 };
 
 &fpga_axi {
