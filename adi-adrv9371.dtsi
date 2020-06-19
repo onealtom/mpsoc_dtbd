@@ -9,7 +9,7 @@
 	//           1st
 	//------------------------------
 	// TO AD9371_A S1_REFCLKP  9528_C_13
-	jesd_Tx_axi_0: jesd_Tx@a0010000 {
+	jesd_Tx_axi_0: jesd0_Tx@a0010000 {
 		#clock-cells = <0>;
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x0 0xA0010000 0x1000>;
@@ -31,8 +31,9 @@
 
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
+
 	};
-	jesd_Rx_axi_0: jesd_Rx@a0011000 {
+	jesd_Rx_axi_0: jesd0_Rx@a0011000 {
 		#clock-cells = <0>;
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x0 0xA0011000 0x1000>;
@@ -58,7 +59,7 @@
 	//           2nd
 	//------------------------------
 	// TO AD9371_A S2_REFCLKP  9528_C_10
-	jesd_Tx_axi_1: jesd_Tx@a0012000 {
+	jesd_Tx_axi_1: jesd1_Tx@a0012000 {
 		#clock-cells = <0>;
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x0 0xA0012000 0x1000>;
@@ -81,7 +82,7 @@
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
 	};
-	jesd_Rx_axi_1: jesd_Rx@a0013000 {
+	jesd_Rx_axi_1: jesd1_Rx@a0013000 {
 		#clock-cells = <0>;
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x0 0xA0013000 0x1000>;
@@ -108,7 +109,7 @@
 	//           3rd
 	//------------------------------
 	// TO AD9371_C S3_REFCLKP  9528_C_8
-	jesd_Tx_axi_2: jesd_Tx@a0014000 {
+	jesd_Tx_axi_2: jesd2_Tx@a0014000 {
 		#clock-cells = <0>;
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x0 0xA0014000 0x1000>;
@@ -131,7 +132,7 @@
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
 	};
-	jesd_Rx_axi_2: jesd_Rx@a0015000 {
+	jesd_Rx_axi_2: jesd2_Rx@a0015000 {
 		#clock-cells = <0>;
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x0 0xA0015000 0x1000>;
@@ -157,7 +158,7 @@
 	//           4th
 	//------------------------------
 	// TO AD9371_D S3_REFCLKP  9528_C_8
-	jesd_Tx_axi_3: jesd_Tx@a0016000 {
+	jesd_Tx_axi_3: jesd3_Tx@a0016000 {
 		#clock-cells = <0>;
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x0 0xA0016000 0x1000>;
@@ -180,7 +181,7 @@
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
 	};
-	jesd_Rx_axi_3: jesd_Rx@a0017000 {
+	jesd_Rx_axi_3: jesd3_Rx@a0017000 {
 		#clock-cells = <0>;
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x0 0xA0017000 0x1000>;
@@ -629,3 +630,46 @@
 // ad9371_gpio_17,       // 34
 // ad9371_gpio_16,       // 33
 // ad9371_gpio_18}));    // 32 + 54
+
+
+
+&jesd_Tx_axi_0 {
+	interrupt-parent = <&axi_intc_1>;
+	interrupts = <1 IRQ_TYPE_EDGE_RISING>;
+};
+
+&jesd_Rx_axi_0 {
+	interrupt-parent = <&axi_intc_1>;
+	 interrupts = <2 IRQ_TYPE_EDGE_RISING>;
+} ;
+
+&jesd_Tx_axi_1 {
+	interrupt-parent = <&axi_intc_1>;
+	 interrupts = <3 IRQ_TYPE_EDGE_RISING>;
+};
+
+&jesd_Rx_axi_1 {
+	interrupt-parent = <&axi_intc_1>;
+	interrupts = <4 IRQ_TYPE_EDGE_RISING>;
+} ;
+
+&jesd_Tx_axi_2 {
+	interrupt-parent = <&axi_intc_1>;
+	interrupts = <5 IRQ_TYPE_EDGE_RISING>;
+};
+
+&jesd_Rx_axi_2 {
+	interrupt-parent = <&axi_intc_1>;
+	interrupts = <6 IRQ_TYPE_EDGE_RISING>;
+} ;
+
+&jesd_Tx_axi_3 {
+	interrupt-parent = <&axi_intc_1>;
+	interrupts = <7 IRQ_TYPE_EDGE_RISING>;
+} ;
+
+&jesd_Rx_axi_3 {
+	interrupt-parent = <&axi_intc_1>;
+	interrupts = <8 IRQ_TYPE_EDGE_RISING>;
+} ;
+
