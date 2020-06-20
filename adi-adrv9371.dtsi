@@ -632,44 +632,41 @@
 // ad9371_gpio_18}));    // 32 + 54
 
 
-
-&jesd_Tx_axi_0 {
-	interrupt-parent = <&axi_intc_1>;
-	interrupts = <1 IRQ_TYPE_EDGE_RISING>;
-};
-
 &jesd_Rx_axi_0 {
 	interrupt-parent = <&axi_intc_1>;
-	 interrupts = <2 IRQ_TYPE_EDGE_RISING>;
+	 interrupts = <1 IRQ_TYPE_EDGE_RISING>;
 } ;
-
-&jesd_Tx_axi_1 {
+&jesd_Tx_axi_0 {
 	interrupt-parent = <&axi_intc_1>;
-	 interrupts = <3 IRQ_TYPE_EDGE_RISING>;
+	interrupts = <2 IRQ_TYPE_EDGE_RISING>;
 };
 
 &jesd_Rx_axi_1 {
 	interrupt-parent = <&axi_intc_1>;
-	interrupts = <4 IRQ_TYPE_EDGE_RISING>;
+	interrupts = <3 IRQ_TYPE_EDGE_RISING>;
 } ;
-
-&jesd_Tx_axi_2 {
+&jesd_Tx_axi_1 {
 	interrupt-parent = <&axi_intc_1>;
-	interrupts = <5 IRQ_TYPE_EDGE_RISING>;
+	 interrupts = <4 IRQ_TYPE_EDGE_RISING>;
 };
 
 &jesd_Rx_axi_2 {
 	interrupt-parent = <&axi_intc_1>;
-	interrupts = <6 IRQ_TYPE_EDGE_RISING>;
+	interrupts = <5 IRQ_TYPE_EDGE_RISING>;
 } ;
-
-&jesd_Tx_axi_3 {
+&jesd_Tx_axi_2 {
 	interrupt-parent = <&axi_intc_1>;
-	interrupts = <7 IRQ_TYPE_EDGE_RISING>;
-} ;
+	interrupts = <6 IRQ_TYPE_EDGE_RISING>;
+};
 
 &jesd_Rx_axi_3 {
 	interrupt-parent = <&axi_intc_1>;
+	interrupts = <7 IRQ_TYPE_EDGE_RISING>;
+} ;
+&jesd_Tx_axi_3 {
+	interrupt-parent = <&axi_intc_1>;
 	interrupts = <8 IRQ_TYPE_EDGE_RISING>;
 } ;
+
+
 
