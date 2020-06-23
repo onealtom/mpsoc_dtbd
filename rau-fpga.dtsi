@@ -402,7 +402,7 @@
 		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
 		reg = < 0x0 0xa0020000 0x1000 >;
-		interrupts = <0 SFPIIC0_IRQ_NUM IRQ_TYPE_EDGE_FALLING>;
+		interrupts = <0 SFPIIC0_IRQ_NUM IRQ_TYPE_LEVEL_HIGH>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 	};
@@ -413,7 +413,7 @@
 		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
 		reg = < 0x0 0xa0021000 0x1000 >;
-		interrupts = <0 SFPIIC1_IRQ_NUM IRQ_TYPE_EDGE_FALLING>;
+		interrupts = <0 SFPIIC1_IRQ_NUM IRQ_TYPE_LEVEL_HIGH>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 	};
@@ -424,7 +424,7 @@
 		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
 		reg = < 0x0 0xa0022000 0x1000 >;
-		interrupts = <0 SFPIIC2_IRQ_NUM IRQ_TYPE_EDGE_FALLING>;
+		interrupts = <0 SFPIIC2_IRQ_NUM IRQ_TYPE_LEVEL_HIGH>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 	};
@@ -435,7 +435,7 @@
 		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
 		reg = < 0x0 0xa0023000 0x1000 >;
-		interrupts = <0 SFPIIC3_IRQ_NUM IRQ_TYPE_EDGE_FALLING>;
+		interrupts = <0 SFPIIC3_IRQ_NUM IRQ_TYPE_LEVEL_HIGH>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 	};
