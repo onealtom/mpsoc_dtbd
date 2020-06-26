@@ -23,6 +23,21 @@
 
 #include "dts_rau_cpri_ecp.dtsi"
 
+	//region0: BASICframedelay@a0002d40 {
+	//	compatible = "generic-uio";
+	//	reg = < 0x0 0xA0002D40 0x28 >;
+	//};
+
+	region1: old_CPRIx_FSinfo_SFinfo@a0002d60 {
+		compatible = "generic-uio";
+		reg = < 0x0 0xA0002D60 0x28 >;
+	};
+
+	//region2: new_CPRIx_FSinfo_SFinfo@a0002d80 {
+	//	compatible = "generic-uio";
+	//	reg = < 0x0 0xA0002D80 0x100 >;
+	//};
+
 	rau_glob_info: rau_glob_info@a0000000 {
 		compatible = "rau,global-info-1.0";
 		reg = <0x0 0xA0000000 0x10>;
@@ -122,7 +137,7 @@
 #if defined (USE_AXCHUB)
 	axchub: axchub@a0001540 {
 		compatible = "rau,axchub-0.1";
-		reg = <0x0 0xA0001540 0x1800>;//总共
+		reg = <0x0 0xA0001540 0x1800>, <0x0 0xA0002D40 0x40>;
 		//reg = <0x0 0xA0001540 0x600>,
 		//      <0x0 0xA0001B40 0x600>,
 		//      <0x0 0xA0002140 0x600>,
