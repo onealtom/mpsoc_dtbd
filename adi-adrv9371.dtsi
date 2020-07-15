@@ -562,21 +562,21 @@
 
 &trx0_ad9371_d {
 	reset-gpios = <&gpio 131 0>; //50
-
+	jesdtri-gpios = <&gpio 143 0>;
 	interrupt-parent = <&gpio>;
 	interrupts = <GPIO_AD937X_1_GPINT IRQ_TYPE_EDGE_RISING>;
 };
 
 &trx0_ad9371_c {
 	reset-gpios = <&gpio 130 0>;
-
+	jesdtri-gpios = <&gpio 142 0>;
 	interrupt-parent = <&gpio>;
 	interrupts = <GPIO_AD937X_2_GPINT IRQ_TYPE_EDGE_RISING>;
 };
 
 &trx0_ad9371_b {
 	reset-gpios = <&gpio 129 0>;
-
+	jesdtri-gpios = <&gpio 141 0>;
 	interrupt-parent = <&gpio>;
 	interrupts = <GPIO_AD937X_3_GPINT IRQ_TYPE_EDGE_RISING>;
 };
@@ -584,9 +584,8 @@
 
 &trx0_ad9371_a {
 	reset-gpios = <&gpio 128 0>;
-	sysref_req-gpios = <&gpio 120 0>;
-	sysref_req_controller=<1>;
-
+	jesdtri-gpios = <&gpio 140 0>;
+	//sysref_req_controller=<1>;
 	interrupt-parent = <&gpio>;
 	interrupts = <GPIO_AD937X_4_GPINT IRQ_TYPE_EDGE_RISING>;
 };
@@ -598,6 +597,7 @@
 &clk0_ad9528 {
 #endif
 	reset-gpios = <&gpio 121 0>;
+	sysref-gpios = <&gpio 120 0>;
 };
 
 
