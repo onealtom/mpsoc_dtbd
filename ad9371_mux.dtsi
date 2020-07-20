@@ -31,6 +31,8 @@
 		adi,rx-profile-iq-rate_khz = <122880>;
 		adi,rx-profile-rf-bandwidth_hz = <100000000>;
 		adi,rx-profile-rx-bbf-3db-corner_khz = <100000>;
+		adi,rx1-gain-index = <195>;
+		adi,rx2-gain-index = <195>;
 
 		adi,rx-profile-rx-fir-gain_db = <(-6)>;
 		adi,rx-profile-rx-fir-num-fir-coefs = <48>;
