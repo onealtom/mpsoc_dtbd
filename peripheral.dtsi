@@ -36,6 +36,23 @@
 		hw_algo = "toggle";
 		hw_margin_ms = <1600>;
 	};
+
+	gpio_keys{
+		compatible = "gpio-keys";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		//autorepeat;
+#ifdef linux
+#undef linux
+#endif
+		button@0 {
+			label = "FRB";
+			linux,code = <103>;
+			linux,input-type;
+			gpios = <&gpio 30 1>;
+		};
+	};
+
 };
 
 &i2c0 {
