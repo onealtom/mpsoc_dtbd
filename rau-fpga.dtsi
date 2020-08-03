@@ -23,21 +23,6 @@
 
 #include "dts_rau_cpri_ecp.dtsi"
 
-	//region0: BASICframedelay@a0002d40 {
-	//	compatible = "generic-uio";
-	//	reg = < 0x0 0xA0002D40 0x28 >;
-	//};
-
-	region1: old_CPRIx_FSinfo_SFinfo@a0002d60 {
-		compatible = "generic-uio";
-		reg = < 0x0 0xA0002D60 0x28 >;
-	};
-
-	//region2: new_CPRIx_FSinfo_SFinfo@a0002d80 {
-	//	compatible = "generic-uio";
-	//	reg = < 0x0 0xA0002D80 0x100 >;
-	//};
-
 	rau_glob_info: rau_glob_info@a0000000 {
 		compatible = "rau,global-info-1.0";
 		reg = <0x0 0xA0000000 0x10>;
@@ -133,6 +118,46 @@
 
 
 	};
+
+//	/*UL_DL_TEST_control*/
+//	misc_region0: region0@a0001500 {
+//		compatible = "generic-uio";
+//		reg = <0x0 0xA0001500 0x40> ;
+//	};
+//
+//	/*JESD LOCK STATUS*/
+//	misc_region1: region1@a0002d80 {
+//		compatible = "generic-uio";
+//		reg = <0x0 0xA0002D80 0x40>;
+//	};
+//
+//	misc_region2: region2@a0002d60 {
+//		compatible = "generic-uio";
+//		reg = <0x0 0xA0002D60 0x28>;
+//	};
+
+	misc_region0: misc0@a0001500 {
+		compatible = "rau,simple-region";
+
+		simpleregion,description = "UL_DL_TEST_control";
+		/*UL_DL_TEST_control*/
+		reg = <0x0 0xA0001500 0x40> ;
+	};
+
+	misc_region1: misc1@a0002d80 {
+		compatible = "rau,simple-region";
+
+		simpleregion,description = "JESD LOCK STATUS";
+		/*JESD LOCK STATUS*/
+		reg = <0x0 0xA0002D80 0x40>;
+	};
+
+//	region1: old_CPRIx_FSinfo_SFinfo@a0002d60 {
+//		compatible = "generic-uio";
+//		reg = < 0x0 0xA0002D60 0x28 >;
+//	};
+
+
 #define USE_AXCHUB
 #if defined (USE_AXCHUB)
 	axchub: axchub@a0001540 {
@@ -397,11 +422,9 @@
 
 	mmi_ledc: mmi_ledc@a0001408 {
 		compatible = "rau,emmi-ledc";
-		reg = <0x0 0xA0001408 0x0F>;
+		reg = <0x0 0xA0001408 0x10>;
 
 	};
-
-
 
 };
 

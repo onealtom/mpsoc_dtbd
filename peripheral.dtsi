@@ -58,11 +58,10 @@
 &i2c0 {
 	status = "okay";
 
-	//eeprom@3a {
-	//	compatible = "atmel,24c32";
-	//	reg = <0x3a>;
-	//	pagesize = <256>;
-	//};
+	stm32pmu@3a {
+		compatible = "rau,stm32pmu";
+		reg = <0x3a>;
+	};
 };
 
 &i2c1 {
