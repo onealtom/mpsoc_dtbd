@@ -51,6 +51,12 @@
 			linux,input-type;
 			gpios = <&gpio 30 1>;
 		};
+		button1@1 {
+			label = "MB";
+			linux,code = <104>;
+			linux,input-type;
+			gpios = <&gpio 31 1>;
+		};
 	};
 
 };
