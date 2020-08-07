@@ -119,23 +119,6 @@
 
 	};
 
-//	/*UL_DL_TEST_control*/
-//	misc_region0: region0@a0001500 {
-//		compatible = "generic-uio";
-//		reg = <0x0 0xA0001500 0x40> ;
-//	};
-//
-//	/*JESD LOCK STATUS*/
-//	misc_region1: region1@a0002d80 {
-//		compatible = "generic-uio";
-//		reg = <0x0 0xA0002D80 0x40>;
-//	};
-//
-//	misc_region2: region2@a0002d60 {
-//		compatible = "generic-uio";
-//		reg = <0x0 0xA0002D60 0x28>;
-//	};
-
 	misc_region0: misc0@a0001500 {
 		compatible = "rau,simple-region";
 
@@ -152,10 +135,13 @@
 		reg = <0x0 0xA0002D80 0x40>;
 	};
 
-//	region1: old_CPRIx_FSinfo_SFinfo@a0002d60 {
-//		compatible = "generic-uio";
-//		reg = < 0x0 0xA0002D60 0x28 >;
-//	};
+	misc_region2: old_fsinfo@a0002d60 {
+		compatible = "rau,simple-region";
+
+		simpleregion,description = "old_CPRIx_FSinfo_SFinfo";
+		/*old_CPRIx_FSinfo_SFinfo*/
+		reg = < 0x0 0xA0002D60 0x20 >;
+	};
 
 
 #define USE_AXCHUB
