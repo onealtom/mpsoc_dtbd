@@ -119,22 +119,6 @@
 
 	};
 
-	misc_region0: misc0@a0001500 {
-		compatible = "rau,simple-region";
-
-		simpleregion,description = "UL_DL_TEST_control";
-		/*UL_DL_TEST_control*/
-		reg = <0x0 0xA0001500 0x40> ;
-	};
-
-	misc_region1: misc1@a0002d80 {
-		compatible = "rau,simple-region";
-
-		simpleregion,description = "JESD LOCK STATUS";
-		/*JESD LOCK STATUS*/
-		reg = <0x0 0xA0002D80 0x40>;
-	};
-
 	misc_region2: old_fsinfo@a0002d60 {
 		compatible = "rau,simple-region";
 
@@ -143,6 +127,12 @@
 		reg = < 0x0 0xA0002D60 0x20 >;
 	};
 
+	misc_region3: jesd_prbs@a0002dc0 {
+		compatible = "rau,simple-region";
+
+		simpleregion,description = "JESD PRBS";
+		reg = <0x0 0xA0002DC0 0x40>;
+	};
 
 #define USE_AXCHUB
 #if defined (USE_AXCHUB)
