@@ -119,6 +119,14 @@
 
 	};
 
+	misc_region1: misc1@a0002d80 {
+		compatible = "rau,simple-region";
+
+		simpleregion,description = "JESD LOCK STATUS";
+		/*JESD LOCK STATUS*/
+		reg = <0x0 0xA0002D80 0x40>;
+	};
+
 	misc_region2: old_fsinfo@a0002d60 {
 		compatible = "rau,simple-region";
 
