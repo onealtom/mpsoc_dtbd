@@ -142,6 +142,26 @@
 		reg = <0x0 0xA0002DC0 0x40>;
 	};
 
+	tae_measure: tae_cail@a0001340 {
+		compatible = "rau,tae-cail-0.1";
+
+		/*TestSigGen*/
+		/*UL_DL_TEST_control*/
+		reg = < 0x0 0xA0001340 0x40 >,
+		      < 0x0 0xA0001500 0x40 >;
+
+		clocks = <&trx0_ad9371_d 3>, <&trx0_ad9371_d 4>,
+			 <&trx0_ad9371_c 3>, <&trx0_ad9371_c 4>,
+			 <&trx0_ad9371_b 3>, <&trx0_ad9371_b 4>,
+			 <&trx0_ad9371_a 3>, <&trx0_ad9371_a 4>;
+
+		clock-names = "lo_rx_ad937x_1","lo_tx_ad937x_1",
+			      "lo_rx_ad937x_2","lo_tx_ad937x_2",
+			      "lo_rx_ad937x_3","lo_tx_ad937x_3",
+			      "lo_rx_ad937x_4","lo_tx_ad937x_4";
+
+	};
+
 #define USE_AXCHUB
 #if defined (USE_AXCHUB)
 	axchub: axchub@a0001540 {
