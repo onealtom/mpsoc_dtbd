@@ -86,28 +86,28 @@
 			compatible = "generic-uio";
 			interrupt-controller;
 			interrupt-parent = <&gic>;
-			interrupts = < 0 LINK0_IRQ_NUM 4 >;
+			interrupts = < 0 LINK0_IRQ_NUM IRQ_TYPE_EDGE_RISING >;
 		};
 
 		cpri1-irq@1e0 {
 			compatible = "generic-uio";
 			interrupt-controller;
 			interrupt-parent = <&gic>;
-			interrupts = < 0 LINK1_IRQ_NUM 4 >;
+			interrupts = < 0 LINK1_IRQ_NUM IRQ_TYPE_EDGE_RISING >;
 		};
 
 		cpri2-irq@2f8 {
 			compatible = "generic-uio";
 			interrupt-controller;
 			interrupt-parent = <&gic>;
-			interrupts = < 0 LINK2_IRQ_NUM 4 >;
+			interrupts = < 0 LINK2_IRQ_NUM IRQ_TYPE_EDGE_RISING >;
 		};
 
 		cpri3-irq@410 {
 			compatible = "generic-uio";
 			interrupt-controller;
 			interrupt-parent = <&gic>;
-			interrupts = < 0 LINK3_IRQ_NUM 4 >;
+			interrupts = < 0 LINK3_IRQ_NUM IRQ_TYPE_EDGE_RISING >;
 		};
 
 

@@ -69,6 +69,16 @@
 		      <0x0 0xA0001488 0x08>;// bw rst busy
 
 		      dfe,node-is-uplink;
+
+		clocks = <&rf_port_axi_0 1>, <&rf_port_axi_1 1>,
+			 <&rf_port_axi_2 1>, <&rf_port_axi_3 1>,
+			 <&rf_port_axi_4 1>, <&rf_port_axi_5 1>,
+			 <&rf_port_axi_6 1>, <&rf_port_axi_7 1>;
+
+		clock-names = "rfport_0_lo","rfport_1_lo",
+			      "rfport_2_lo","rfport_3_lo",
+			      "rfport_4_lo","rfport_5_lo",
+			      "rfport_6_lo","rfport_7_lo";
 	};
 
 	////-------------- DL RX  --------------------------
@@ -111,12 +121,20 @@
 		      <0x0 0xA0000800 0x40>,
 		      <0x0 0xA0001480 0x08>;// bw rst busy
 
-		clocks = <&rf_port_axi_7 0>, <&rf_port_axi_6 0>, <&rf_port_axi_5 0>, <&rf_port_axi_4 0>,
-		         <&rf_port_axi_3 0>, <&rf_port_axi_2 0>, <&rf_port_axi_1 0>, <&rf_port_axi_0 0>;
-		clock-names = "dl_lo_1a","dl_lo_1b","dl_lo_2a","dl_lo_2b",
-			      "dl_lo_3a","dl_lo_3b","dl_lo_4a","dl_lo_4b";
+		//clocks = <&rf_port_axi_7 0>, <&rf_port_axi_6 0>, <&rf_port_axi_5 0>, <&rf_port_axi_4 0>,
+		//         <&rf_port_axi_3 0>, <&rf_port_axi_2 0>, <&rf_port_axi_1 0>, <&rf_port_axi_0 0>;
+		//clock-names = "dl_lo_1a","dl_lo_1b","dl_lo_2a","dl_lo_2b",
+		//	      "dl_lo_3a","dl_lo_3b","dl_lo_4a","dl_lo_4b";
 
+		clocks = <&rf_port_axi_0 0>, <&rf_port_axi_1 0>,
+			 <&rf_port_axi_2 0>, <&rf_port_axi_3 0>,
+			 <&rf_port_axi_4 0>, <&rf_port_axi_5 0>,
+			 <&rf_port_axi_6 0>, <&rf_port_axi_7 0>;
 
+		clock-names = "rfport_0_lo","rfport_1_lo",
+			      "rfport_2_lo","rfport_3_lo",
+			      "rfport_4_lo","rfport_5_lo",
+			      "rfport_6_lo","rfport_7_lo";
 	};
 
 	misc_region1: misc1@a0002d80 {
@@ -166,7 +184,8 @@
 #if defined (USE_AXCHUB)
 	axchub: axchub@a0001540 {
 		compatible = "rau,axchub-0.1";
-		reg = <0x0 0xA0001540 0x1800>, <0x0 0xA0002D40 0x20>;
+		reg = <0x0 0xA0001540 0x1800>, <0x0 0xA0002D40 0x20>,
+		      <0x0 0xA0002E00 0x14>;
 		//reg = <0x0 0xA0001540 0x600>,
 		//      <0x0 0xA0001B40 0x600>,
 		//      <0x0 0xA0002140 0x600>,
