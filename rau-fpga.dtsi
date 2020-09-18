@@ -529,21 +529,18 @@
 		compatible = "adi,axi-fan-control-1.00.a";
 		reg = <0 0xA0018000 0x1000>;
 		clocks = <&clkc 71>;
-		interrupts = <0 FAN0_IRQ_NUM 1>;
 	};
 
 	axi_fan_control2: axi-fan-control@a0019000 {
 		compatible = "adi,axi-fan-control-1.00.a";
 		reg = <0 0xA0019000 0x1000>;
 		clocks = <&clkc 71>;
-		interrupts = <0 FAN1_IRQ_NUM 1>;
 	};
 
 	axi_fan_control3: axi-fan-control@a001a000 {
 		compatible = "adi,axi-fan-control-1.00.a";
 		reg = <0 0xA001A000 0x1000>;
 		clocks = <&clkc 71>;
-		interrupts = <0 FAN2_IRQ_NUM 1>;
 	};
 
 };
