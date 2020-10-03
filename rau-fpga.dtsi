@@ -453,18 +453,6 @@
 
 &fpga_axi {
 
-	axi_intc_1: interrupt-controller@a0024000 {
-		#interrupt-cells = <2>;
-		clocks = <&clkc 71>;
-		compatible = "xlnx,xps-intc-1.00.a";
-		interrupt-controller ;
-		interrupt-parent = <&gic>;
-		interrupts = <0 INTC0_IRQ_NUM IRQ_TYPE_LEVEL_HIGH>;
-		reg = < 0x0 0xA0024000 0x1000 >;
-		xlnx,kind-of-intr = <0x1>;
-		xlnx,num-intr-inputs = <0x10>;
-	};
-
 	/*sfp i2c 0*/
 	axi_i2c_0: axii2c0@a0020000 {
 		compatible = "xlnx,xps-iic-2.00.a";
@@ -512,10 +500,10 @@
 	/*RTC I2C*/
 	axi_i2c_4: axii2c4@a0025000 {
 		compatible = "xlnx,xps-iic-2.00.a";
-		interrupt-parent = <&axi_intc_1>;
+		interrupt-parent = <&gic>;
 		clocks = <&clkc 71>;
-		reg = < 0x0 0xA0025000 0x1000 >;
-		interrupts = <0 IRQ_TYPE_EDGE_FALLING >;
+		reg = < 0x0 0xA0024000 0x1000 >;
+		interrupts = <0 INTC0_IRQ_NUM IRQ_TYPE_LEVEL_HIGH>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 
