@@ -312,7 +312,7 @@
 			adi,pll2-r1-div = <1>;
 			adi,pll2-charge-pump-current-nA = <805000>;
 
-			adi,ref-mode=<REF_MODE_SELECT_REFB>;	// rj
+			adi,ref-mode=<REF_MODE_SELECT_REFA>;
 
 			/* SYSREF config */
 			adi,sysref-src = <SYSREF_SRC_INTERNAL>;
