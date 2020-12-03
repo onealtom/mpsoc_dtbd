@@ -88,11 +88,6 @@
 		reg = <0x52>;
 		pagesize = <256>;
 	};
-	eeprom@53 {
-		compatible = "atmel,24c512";
-		reg = <0x53>;
-		pagesize = <256>;
-	};
 
 };
 
