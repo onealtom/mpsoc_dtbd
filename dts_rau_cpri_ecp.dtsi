@@ -35,7 +35,25 @@
 		interrupts = < 0 ECP3_IRQ_NUM 4 >;
 	};
 
+	gt0@b003d000 {
+		compatible = "generic-uio";
+		reg = < 0x0 0xB003D000 0x10 >;
+	};
 
+	gt1@b003d010 {
+		compatible = "generic-uio";
+		reg = < 0x0 0xB003D010 0x10 >;
+	};
+
+	gt2@b003d020 {
+		compatible = "generic-uio";
+		reg = < 0x0 0xB003D020 0x10 >;
+	};
+
+	gt3@b003d030 {
+		compatible = "generic-uio";
+		reg = < 0x0 0xB003D030 0x10 >;
+	};
 
 		cpri-reg@b0000000 {
 			compatible = "generic-uio";
