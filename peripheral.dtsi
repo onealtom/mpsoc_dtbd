@@ -25,6 +25,12 @@
 			EMIO_72, EMIO_73, EMIO_74, EMIO_75, EMIO_76, EMIO_77, EMIO_78, EMIO_79,
 			EMIO_80, EMIO_81, EMIO_82, EMIO_83, EMIO_84, EMIO_85, EMIO_86, EMIO_87,
 			EMIO_88, EMIO_89, EMIO_90, EMIO_91, EMIO_92, EMIO_93, EMIO_94, EMIO_95;
+
+			alarm_1 {
+					gpio-hog;
+					gpios = <78 GPIO_ACTIVE_LOW>;
+					output-low;
+			};
 };
 
 
