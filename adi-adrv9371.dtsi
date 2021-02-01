@@ -279,7 +279,6 @@
 			adi,vcxo-freq = <30720000>;
 #endif
 			adi,refa-enable=<1>;	// rj
-			adi,refa-diff-rcv-enable=<1>;	//rj
 
 #if defined (OSC_122M88)
 			adi,refa-r-div = <66>;
@@ -297,7 +296,8 @@
 			adi,pll1-feedback-div = <16>;
 #endif
 
-			adi,pll1-charge-pump-current-nA = <63500>;
+			adi,pll1-charge-pump-current-nA = <31500>;
+			adi,pll1-charge-pump-forces-holdover;
 
 
 			/* PLL2 config */
