@@ -299,6 +299,10 @@
 		soc_revision: soc_revision@0 {
 			reg = <0x0 0x4>;
 		};
+
+		efuse_dna: efuse_dna@c {
+			reg = <0xc 0xc>;
+		};
 	};
 
 	pcap: pcap {
