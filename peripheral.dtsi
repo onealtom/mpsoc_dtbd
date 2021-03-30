@@ -89,10 +89,15 @@
 		reg = <0x51>;
 		pagesize = <256>;
 	};
-	eeprom@52 {
-		compatible = "atmel,24c512";
+	//eeprom@52 {
+	//	compatible = "atmel,24c512";
+	//	reg = <0x52>;
+	//	pagesize = <256>;
+	//};
+
+	stm32pmu@52 {
+		compatible = "rau,miscrom";
 		reg = <0x52>;
-		pagesize = <256>;
 	};
 
 };
