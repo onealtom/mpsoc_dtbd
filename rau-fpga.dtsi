@@ -145,10 +145,10 @@
 		reg = <0x0 0xA0002D80 0x40>;
 	};
 
-	misc_region2: old_fsinfo@a0002d60 {
+	misc_region2: nodetrp@a0002d60 {
 		compatible = "rau,simple-region";
 
-		simpleregion,description = "old_CPRIx_FSinfo_SFinfo";
+		simpleregion,description = "nodeTrpToRauTrpOffset";
 		/*old_CPRIx_FSinfo_SFinfo*/
 		reg = < 0x0 0xA0002D60 0x20 >;
 	};
@@ -185,7 +185,7 @@
 	axchub: axchub@a0001540 {
 		compatible = "rau,axchub-0.1";
 		reg = <0x0 0xA0001540 0x1800>, <0x0 0xA0002D40 0x20>,
-		      <0x0 0xA0002E00 0x14>;
+		      <0x0 0xA0002E00 0x14>, <0x0 0xA00031C0 0x40>;
 		//reg = <0x0 0xA0001540 0x600>,
 		//      <0x0 0xA0001B40 0x600>,
 		//      <0x0 0xA0002140 0x600>,
