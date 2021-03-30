@@ -330,7 +330,8 @@
 		reg = <0x0 0xA0001040 0x40>,
 		      <0x0 0xA00014C0 0x04>, // Port_SW_Control
 		      <0x0 0xA00014E0 0x04>, // PA_SW
-		      <0x0 0xA0001400 0x01>; // LED
+		      <0x0 0xA0001400 0x01>, // LED
+		      <0x0 0xA0002FC0 0x40>; // TDD SW
 
 		clocks = <&trx0_ad9371_d 3>, <&trx0_ad9371_d 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -345,7 +346,8 @@
 		reg = <0x0 0xA0001080 0x40>,
 		      <0x0 0xA00014C4 0x04>, // Port_SW_Control
 		      <0x0 0xA00014E4 0x04>, // PA_SW
-		      <0x0 0xA0001401 0x01>; // LED
+		      <0x0 0xA0001401 0x01>, // LED
+		      <0x0 0xA0003000 0x40>; // TDD SW
 
 		clocks = <&trx0_ad9371_d 3>, <&trx0_ad9371_d 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -359,7 +361,8 @@
 		reg = <0x0 0xA00010C0 0x40>,
 		      <0x0 0xA00014C8 0x04>, // Port_SW_Control
 		      <0x0 0xA00014E8 0x04>, // PA_SW
-		      <0x0 0xA0001402 0x01>; // LED
+		      <0x0 0xA0001402 0x01>, // LED
+		      <0x0 0xA0003040 0x40>; // TDD SW
 
 		clocks = <&trx0_ad9371_c 3>, <&trx0_ad9371_c 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -373,7 +376,8 @@
 		reg = <0x0 0xA0001100 0x40>,
 		      <0x0 0xA00014CC 0x04>, // Port_SW_Control
 		      <0x0 0xA00014EC 0x04>, // PA_SW
-		      <0x0 0xA0001403 0x01>; // LED
+		      <0x0 0xA0001403 0x01>, // LED
+		      <0x0 0xA0003080 0x40>; // TDD SW
 
 		clocks = <&trx0_ad9371_c 3>, <&trx0_ad9371_c 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -390,7 +394,8 @@
 		reg = <0x0 0xA0001140 0x40>,
 		      <0x0 0xA00014D0 0x04>, // Port_SW_Control
 		      <0x0 0xA00014F0 0x04>, // PA_SW
-		      <0x0 0xA0001404 0x01>; // LED
+		      <0x0 0xA0001404 0x01>, // LED
+		      <0x0 0xA00030C0 0x40>; // TDD SW
 
 		clocks = <&trx0_ad9371_b 3>, <&trx0_ad9371_b 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -405,7 +410,8 @@
 		reg = <0x0 0xA0001180 0x40>,
 		      <0x0 0xA00014D4 0x04>, // Port_SW_Control
 		      <0x0 0xA00014F4 0x04>, // PA_SW
-		      <0x0 0xA0001405 0x01>; // LED
+		      <0x0 0xA0001405 0x01>, // LED
+		      <0x0 0xA0003100 0x40>; // TDD SW
 
 		clocks = <&trx0_ad9371_b 3>, <&trx0_ad9371_b 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -419,7 +425,8 @@
 		reg = <0x0 0xA00011C0 0x40>,
 		      <0x0 0xA00014D8 0x04>, // Port_SW_Control
 		      <0x0 0xA00014F8 0x04>, // PA_SW
-		      <0x0 0xA0001406 0x01>; // LED
+		      <0x0 0xA0001406 0x01>, // LED
+		      <0x0 0xA0003140 0x40>; // TDD SW
 
 		clocks = <&trx0_ad9371_a 3>, <&trx0_ad9371_a 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
@@ -433,7 +440,8 @@
 		reg = <0x0 0xA0001200 0x40>,
 		      <0x0 0xA00014DC 0x04>, // Port_SW_Control
 		      <0x0 0xA00014FC 0x04>, // PA_SW
-		      <0x0 0xA0001407 0x01>; // LED
+		      <0x0 0xA0001407 0x01>, // LED
+		      <0x0 0xA0003180 0x40>; // TDD SW
 
 		clocks = <&trx0_ad9371_a 3>, <&trx0_ad9371_a 4> ;
 		clock-names = "lo_rx_freq","lo_tx_freq";
