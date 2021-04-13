@@ -95,7 +95,7 @@
 	//	pagesize = <256>;
 	//};
 
-	stm32pmu@52 {
+	check_sha@52 {
 		compatible = "rau,miscrom";
 		reg = <0x52>;
 	};
